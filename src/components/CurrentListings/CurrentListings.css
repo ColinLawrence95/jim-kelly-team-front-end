@@ -35,3 +35,38 @@
     border-radius: 12px;
     margin-top: 100px;
 }
+@media (max-width: 1738px) {
+    .current-listings-element {
+        height: 300px;
+        width: 400px;
+    }
+}
+@media (max-width: 1433px) {
+    .current-listings-element {
+        height: 250px;
+        width: 300px;
+    }
+}
+@media (max-width: 1133px) {
+    .current-listings-element {
+        height: 150px;
+        width: 200px;
+    }
+}
+@media (max-width: 750px) {
+    .current-listings-element {
+        height: 200px;
+        width: 250px;
+    }
+    .current-listings-container {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .current-listings-arrow-left,
+    .current-listings-arrow-right {
+        display: none;
+    }
+    .current-listings-element-container{
+        margin-top: 20px;
+    }
+}

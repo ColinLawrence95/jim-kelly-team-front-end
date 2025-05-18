@@ -5,3 +5,12 @@ body {
     margin: 0 50px 0 50px;
     background-color: whitesmoke;
 }
+html {
+    width: 100%;
+    margin: 0;
+}
+@media (max-width: 738px){
+   body{
+    margin: 0;
+   }
+}
