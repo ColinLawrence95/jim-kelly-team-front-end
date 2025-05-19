@@ -1,19 +1,18 @@
 import NavBar from "./components/NavBar/NavBar";
-import Hero from "./components/Hero/Hero";
-import CurrentListings from "./components/CurrentListings/CurrentListings";
-import OurStory from "./components/OurStory/OurStory";
-import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
+import LandingPage from "./components/LandingPage/LandingPage";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
     return (
         <>
             <NavBar />
-            <Hero />
-            <CurrentListings />
-            <OurStory />
-            <Testimonials />
+            <Routes>
+                <Route path="/" element = {<LandingPage/>}/>
+               
+                
+            </Routes>
             <Footer />
         </>
     );
