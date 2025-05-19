@@ -11,7 +11,7 @@ function CurrentListings() {
         <div className="current-listings-container">
             <FaArrowLeftLong className="current-listings-arrow-left" size={40} />
             {listings.map((listing, index) => (
-                <div className="current-listings-element-container">
+                <div key = {index} className="current-listings-element-container">
                     <div>Listing #{listing}</div>
                     <div
                         key={index}
