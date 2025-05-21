@@ -6,12 +6,11 @@ function OurStory() {
             <div className="our-story-title-and-text">
                 <h2 id="our-story-title">Our Story</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus,
-                    aspernatur itaque. Quia laudantium placeat molestiae dolor doloremque modi
-                    maiores minus excepturi! Ad sint fugit tempore similique rem quidem repellat
-                    est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus repudiandae
-                    veniam, iste aliquid odit sed autem. Numquam, veniam rerum, quidem maiores vero
-                    nostrum voluptates repellat expedita aspernatur illum ullam assumenda.
+                    The Jim Kelly Team is more than just a group of real estate professionals —
+                    we’re family. That’s why treating our clients like family is at the heart of
+                    everything we do. With over 45 years of combined experience, we bring a deep
+                    understanding of the real estate market and a commitment to guiding you with
+                    care, integrity, and results.
                 </p>
                 <button>Learn More</button>
             </div>

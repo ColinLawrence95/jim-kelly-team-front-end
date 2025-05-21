@@ -3,18 +3,20 @@
     align-items: center;
     justify-content: space-between;
     background-color: lightgrey;
-    height: 350px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    height: 980px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 .hero-title-and-button{
-    margin-left: 100px ;
-    font-size: 30px;
+    margin-left: 50px ;
+    font-size: 60px;
 }
 .hero-team-image{
-    background-color: grey;
-    height: 300px;
-    width: 700px;
-    margin-right: 100px;
-    border-radius: 12px;
+    height: 900px;
+    width: 1000px;
+    margin-right: 50px;
+    border-radius: 50px;
+    background-size: cover;
+    background-position:  center calc(50% + 150px);
+    background-repeat: no-repeat;
 }

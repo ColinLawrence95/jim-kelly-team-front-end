@@ -12,7 +12,6 @@ function CurrentListings() {
             <FaArrowLeftLong className="current-listings-arrow-left" size={40} />
             {listings.map((listing, index) => (
                 <div key = {index} className="current-listings-element-container">
-                    <div>Listing #{listing}</div>
                     <div
                         key={index}
                         className="current-listings-element"

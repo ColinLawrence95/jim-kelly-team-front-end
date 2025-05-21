@@ -1,0 +1,16 @@
+.about-jim-container{
+    display: flex;
+    align-items: center;
+}
+.about-jim-image{
+    height: 400px;
+    width: 300px;
+    border-radius: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#about-jim-desc{
+    width: 1000px;
+    margin-left: 50px;
+}

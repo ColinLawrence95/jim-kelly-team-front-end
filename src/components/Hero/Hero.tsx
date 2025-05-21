@@ -6,9 +6,10 @@ function Hero() {
                 <h2>The Jim Kelly Team</h2>
                 <button>Contact Us</button>
             </div>
-            <div className="hero-team-image">
-                <h2>Team Image Here</h2>
-            </div>
+            <div
+                className="hero-team-image"
+                style={{ backgroundImage: `url(/team-photo.JPG)` }}
+            ></div>
         </div>
     );
 }
