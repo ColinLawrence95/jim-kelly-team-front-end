@@ -1,8 +1,8 @@
-.nav-bar-container{
+.nav-bar-container {
     background-color: rgba(144, 179, 253, 0.801);
     display: flex;
     align-items: center;
-
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
 .nav-bar-contents {
     display: flex;
@@ -11,7 +11,7 @@
     margin: 0 30px 0 30px;
     width: 50%;
 }
-.nav-bar-logo{
+.nav-bar-logo {
     background-size: cover;
     background-position: center;
     background-size: contain;

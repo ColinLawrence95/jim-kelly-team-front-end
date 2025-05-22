@@ -1,16 +1,54 @@
-.about-jim-container{
+.about-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-title {
+    font-size: 50px;
+}
+#about-desc-header {
+    font-size: 30px;
+    margin: 0 30px 30px 30px;
+    
+}
+#about-meet-the-team {
+    font-size: 40px;
+}
+.about-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(197, 197, 197, 0.596);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+}
+.about-container {
     display: flex;
     align-items: center;
 }
-.about-jim-image{
-    height: 400px;
+.about-image-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-jim-image,
+.about-connor-image,
+.about-syd-image {
+    height: 350px;
     width: 300px;
-    border-radius: 200px;
+    border-radius: 100px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-#about-jim-desc{
+
+.about-desc {
     width: 1000px;
     margin-left: 50px;
+    font-size: 20px;
 }

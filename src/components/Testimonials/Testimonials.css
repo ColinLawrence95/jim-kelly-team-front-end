@@ -1,24 +1,25 @@
-.testimonials-container{
+.testimonials-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     margin-top: 50px;
 }
-#testimonials-title{
+#testimonials-title {
     display: flex;
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 40px;
 }
-.testimonials-element{
+.testimonials-element {
     width: 300px;
     height: 450px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: bisque;
+    background-color: rgba(196, 196, 196, 0.76);
     padding: 10px;
     border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
