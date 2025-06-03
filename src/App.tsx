@@ -4,6 +4,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import AboutPage from "./components/AboutPage/AboutPage";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import ListingsPage from "./components/ListingsPage/ListingsPage";
 
 function App() {
     return (
@@ -12,6 +13,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/listings" element={<ListingsPage />} />
+
             </Routes>
             <Footer />
         </>

@@ -4,9 +4,6 @@
     align-items: center;
     width: 100%;
     margin-top: 50px;
-    background-color: rgba(197, 197, 197, 0.596);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
 .current-listings-element-container {
     display: flex;
@@ -15,21 +12,26 @@
     flex-direction: column;
 }
 .current-listings-element {
-    height: 300px;
-    width: 500px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    background-size: cover;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
     border-radius: 50px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    background-color: lightgray;
+    padding: 20px;
+
 }
-.current-listings-arrow-left,
+.current-listings-image{
+    height: 450px;
+    width: 500px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .current-listings-arrow-left,
 .current-listings-arrow-right {
     color: rgb(43, 43, 43);
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
@@ -77,4 +79,4 @@
     .current-listings-element-container {
         margin-top: 20px;
     }
-}
+} */

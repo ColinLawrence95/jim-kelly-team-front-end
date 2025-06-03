@@ -1,12 +1,15 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-
+import "./CurrentListings.css";
 interface Listing {
     ListPrice: number;
     UnparsedAddress: string;
     PublicRemarks: string;
-    MediaURL?: string; // optional string for one photo URL
+    MlsStatus: string;
+    MediaURL?: string;
 }
+
+const isActive = ["New", "Extension", "Price Change"];
 
 function CurrentListings() {
     const [listings, setListings] = useState<Listing[]>([]);
@@ -23,29 +26,29 @@ function CurrentListings() {
         }
         fetchListings();
     }, []);
-
     return (
-        <div>
-            {listings.map((listing, index) => (
-                <div key={index} style={{ marginBottom: "2rem" }}>
-                    <p>Address: {listing.UnparsedAddress}</p>
-                    <p>Price: {listing.ListPrice}</p>
-                    
-
-                    {/* Show photo if MediaURL exists */}
-                    {listing.MediaURL ? (
-                        <img
-                            src={listing.MediaURL}
-                            alt="Listing"
-                            style={{ maxWidth: "300px", height: "auto" }}
-                            onError={() => console.error("Failed to load image:", listing.MediaURL)}
-                        />
-                    ) : (
-                        <p>No photos available</p>
-                    )}
-                    <p>{listing.PublicRemarks}</p>
-                </div>
-            ))}
+        <div className="current-listings-container">
+            {listings
+                .filter((listing) => isActive.includes(listing.MlsStatus)) 
+                .map((listing, index) => (
+                    <div className="current-listings-element" key={index}>
+                          <p id="current-listings-address">{listing.UnparsedAddress}</p>
+                        {listing.MediaURL ? (
+                            <img
+                                className="current-listings-image"
+                                src={listing.MediaURL}
+                                alt="Listing"
+                                onError={() =>
+                                    console.error("Failed to load image:", listing.MediaURL)
+                                }
+                            />
+                        ) : (
+                            <p>No photos available</p>
+                        )}
+                      
+                        <p id="current-listings-price">${listing.ListPrice}</p>
+                    </div>
+                ))}
         </div>
     );
 }
