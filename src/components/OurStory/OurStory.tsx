@@ -1,4 +1,5 @@
 import "./OurStory.css";
+import { Link } from "react-router-dom";
 
 function OurStory() {
     return (
@@ -12,7 +13,9 @@ function OurStory() {
                     understanding of the real estate market and a commitment to guiding you with
                     care, integrity, and results.
                 </p>
-                <button>Learn More</button>
+                <Link to="/about">
+                        <button>Learn More</button>
+                    </Link>
             </div>
         </div>
     );

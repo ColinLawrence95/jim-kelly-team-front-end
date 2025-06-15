@@ -1,7 +1,52 @@
-.footer-container {
-    background-color: rgba(50, 51, 51, 0.705);
-    padding: 100px;
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ebebeb;
+    color: #555;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    margin-top: 50px;
+}
+
+.footer-copy,
+.footer-credit {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.designer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.designer-link:hover{
+    color: rgb(136, 7, 7);
+}
+.profile-pic {
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.footer-socials {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.footer-socials a {
+    color: #000000;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus {
+    color: #61dafb;
+    outline: none;
 }

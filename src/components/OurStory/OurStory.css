@@ -25,3 +25,9 @@
 
     font-size: 20px;
 }
+.our-story-title-and-text button{
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    padding: 5px;
+}

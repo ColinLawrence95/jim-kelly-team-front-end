@@ -10,17 +10,19 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
     return (
-        <>
+        <div className="app-container">
             <NavBar />
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/listings" element={<ListingsPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-            </Routes>
+            <main className="app-content">
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/listings" element={<ListingsPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                </Routes>
+            </main>
             <Footer />
             <ToastContainer />
-        </>
+        </div>
     );
 }
 

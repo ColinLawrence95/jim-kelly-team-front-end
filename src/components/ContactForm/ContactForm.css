@@ -31,18 +31,19 @@
     width: 40rem;
     max-width: 40rem;
     min-width: 40rem;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 5px;
 }
 
 .contact-form button {
     width: 150px;
     height: 40px;
+    font-size: 20px;
     border-radius: 5px;
 }
 .contact-form select {
     width: 40rem;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 5px;
     height: 2rem;
 }
