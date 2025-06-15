@@ -3,26 +3,32 @@ function AboutPage() {
     return (
         <div className="about-page-container">
             <div className="about-header">
-                <h1 id="about-title">Our Story</h1>
-                <p id="about-desc-header">
-                    The Jim Kelly Team is more than just a group of real estate professionals —
-                    we’re family. That’s why treating our clients like family is at the heart of
-                    everything we do. With over 45 years of combined experience, we bring a deep
-                    understanding of the real estate market and a commitment to guiding you with
-                    care, integrity, and results. We specialize in buying and selling homes and
-                    condos across Durham Region and the Greater Toronto Area, and we stay ahead of
-                    market trends to help you make informed, strategic decisions. Our extensive
-                    knowledge allows us to position you for success — whether you're making a
-                    personal move or a financial investment. We know that buying or selling a home
-                    is one of the biggest decisions you’ll ever make. That’s why we take the time to
-                    truly get to know you and your goals, offering personalized, full-service
-                    support every step of the way. From the first meeting to the final signature —
-                    and well beyond — we’re with you, making sure the process is smooth, rewarding,
-                    and aligned with your future plans. Backed by decades of experience and a shared
-                    passion for helping people, The Jim Kelly Team is proud to be the trusted name
-                    families turn to. When you work with us, you’re not just a client — you’re
-                    treated like one of our own.
-                </p>
+                <div id="about-our-story-desc">
+                    <h1 id="about-title">Our Story</h1>
+                    <p id="about-desc-header">
+                        The Jim Kelly Team is more than just a group of real estate professionals —
+                        we’re family. That’s why treating our clients like family is at the heart of
+                        everything we do. With over 45 years of combined experience, we bring a deep
+                        understanding of the real estate market and a commitment to guiding you with
+                        care, integrity, and results. We specialize in buying and selling homes and
+                        condos across Durham Region and the Greater Toronto Area, and we stay ahead
+                        of market trends to help you make informed, strategic decisions. Our
+                        extensive knowledge allows us to position you for success — whether you're
+                        making a personal move or a financial investment. We know that buying or
+                        selling a home is one of the biggest decisions you’ll ever make. That’s why
+                        we take the time to truly get to know you and your goals, offering
+                        personalized, full-service support every step of the way. From the first
+                        meeting to the final signature — and well beyond — we’re with you, making
+                        sure the process is smooth, rewarding, and aligned with your future plans.
+                        Backed by decades of experience and a shared passion for helping people, The
+                        Jim Kelly Team is proud to be the trusted name families turn to. When you
+                        work with us, you’re not just a client — you’re treated like one of our own.
+                    </p>
+                </div>
+                <div
+                    className="about-team-image"
+                    style={{ backgroundImage: `url(/about-team-image.JPG)` }}
+                ></div>
             </div>
             <h1 id="about-meet-the-team">Meet the Team</h1>
 

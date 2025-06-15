@@ -7,29 +7,57 @@
 
 #about-title {
     font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #about-desc-header {
-    font-size: 30px;
-    margin: 0 30px 30px 30px;
-    
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+#about-our-story-desc {
+    background-color: lightgrey;
+    margin-left: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    border-radius: 50px;
+    width: 720px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #about-meet-the-team {
+    margin-top: 50px;
     font-size: 40px;
 }
 .about-header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgba(197, 197, 197, 0.596);
-    border-radius: 50px;
-
+    background-color: gray;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 800px;
+    width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
-    margin-top: 50px;
 }
+.about-team-image {
+    height: 700px;
+    width: 720px;
+    border-radius: 50px;
+    margin-right: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+}
+
 .about-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .about-image-name-container {
     display: flex;
@@ -46,10 +74,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    margin-bottom: 20px;
 }
 
 .about-desc {
-    width: 1000px;
     margin-left: 50px;
     font-size: 20px;
 }

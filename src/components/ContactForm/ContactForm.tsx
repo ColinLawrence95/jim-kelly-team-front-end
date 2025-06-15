@@ -76,6 +76,8 @@ const ContactForm: React.FC = () => {
     return (
         <div className="contact-form-container">
             <form onSubmit={handleSubmit} className="contact-form">
+                <h1>Contact Us</h1>
+
                 <input
                     name="name"
                     value={formData.name}
@@ -105,7 +107,7 @@ const ContactForm: React.FC = () => {
                     </option>
                     <option value="BUY">I'm looking to Buy</option>
                     <option value="SELL">I'm looking to Sell</option>
-                    <option value="INFO">I'd Like some additional information</option>
+                    <option value="INFO">I'd like some additional information</option>
                 </select>
                 <textarea
                     name="message"
@@ -135,6 +137,7 @@ const ContactForm: React.FC = () => {
                 </button>
                 {status && <p>{status}</p>}
             </form>
+         
         </div>
     );
 };

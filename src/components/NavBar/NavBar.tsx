@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <div className="nav-bar-container">
             <div className="nav-bar-contents">
-                <div className="nav-bar-logo" style={{ backgroundImage: `url(/REMAX_logo.svg)` }} />
+                <div className="nav-bar-logo" style={{ backgroundImage: `url(/REMAX_logo.png)` }} />
                 <h4 onClick={() => navigate("/")}>Home</h4>
                 <h4 onClick={() => navigate("/about")}>About</h4>
                 <h4 onClick={() => navigate("/listings")}>Current Listings</h4>

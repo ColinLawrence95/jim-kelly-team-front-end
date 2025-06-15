@@ -1,7 +1,7 @@
 .footer-container {
     background-color: rgba(50, 51, 51, 0.705);
     padding: 100px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     margin-top: 50px;
 }

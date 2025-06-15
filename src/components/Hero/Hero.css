@@ -1,23 +1,46 @@
-.hero-container{
+.hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: lightgrey;
-    height: 850px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    background-color: gray;
+    padding-bottom: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
-.hero-title-and-button{
-    margin-left: 50px ;
+.hero-title-and-button {
+    justify-content: center;
     font-size: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.hero-team-image{
-    height: 750px;
-    width: 900px;
+.hero-title-and-button button {
+    font-size: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.hero-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 50px;
+    width: 720px;
+    height: 700px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+}
+.hero-team-image {
+    margin-top: 50px;
+    height: 700px;
+    width: 720px;
     margin-right: 50px;
     border-radius: 50px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
     background-size: cover;
-    background-position:  center;
+    background-position: center;
     background-repeat: no-repeat;
 }
