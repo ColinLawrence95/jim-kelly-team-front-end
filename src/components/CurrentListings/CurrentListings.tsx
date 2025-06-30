@@ -8,12 +8,18 @@ interface Listing {
     PublicRemarks: string;
     MlsStatus: string;
     MediaURL?: string;
-    ListingKey: string; // Add this if not already present
+    ListingKey: string;
+    ListingContractDate?: string; 
 }
 
 const isActive = ["New", "Extension", "Price Change"];
+interface Props {
+    sortType: "price-asc" | "price-desc" | "date-newest" | "date-oldest";
+    listings: Listing[];
+}
 
-function CurrentListings() {
+
+function CurrentListings({ sortType }: Props) {
     const [listings, setListings] = useState<Listing[]>([]);
 
     useEffect(() => {
@@ -28,11 +34,42 @@ function CurrentListings() {
         fetchListings();
     }, []);
 
+    const getDaysAgo = (dateString?: string): number | null => {
+        if (!dateString) return null;
+        const listingDate = new Date(dateString);
+        const today = new Date();
+        const diffTime = today.getTime() - listingDate.getTime();
+        return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    };
+
+    const filteredAndSortedListings = listings
+        .filter((listing) => isActive.includes(listing.MlsStatus))
+        .sort((a, b) => {
+            switch (sortType) {
+                case "price-asc":
+                    return a.ListPrice - b.ListPrice;
+                case "price-desc":
+                    return b.ListPrice - a.ListPrice;
+                case "date-newest":
+                    return (
+                        new Date(b.ListingContractDate || 0).getTime() -
+                        new Date(a.ListingContractDate || 0).getTime()
+                    );
+                case "date-oldest":
+                    return (
+                        new Date(a.ListingContractDate || 0).getTime() -
+                        new Date(b.ListingContractDate || 0).getTime()
+                    );
+                default:
+                    return 0;
+            }
+        });
+
     return (
         <div className="current-listings-container">
-            {listings
-                .filter((listing) => isActive.includes(listing.MlsStatus))
-                .map((listing, index) => (
+            {filteredAndSortedListings.map((listing, index) => {
+                const daysAgo = getDaysAgo(listing.ListingContractDate);
+                return (
                     <a
                         key={index}
                         href={`https://www.remaxhallmark.com/details/${listing.ListingKey}`}
@@ -42,6 +79,7 @@ function CurrentListings() {
                     >
                         <div className="current-listings-element">
                             <p id="current-listings-address">{listing.UnparsedAddress}</p>
+
                             {listing.MediaURL ? (
                                 <img
                                     className="current-listings-image"
@@ -54,10 +92,18 @@ function CurrentListings() {
                             ) : (
                                 <p>No photos available</p>
                             )}
-                            <p id="current-listings-price">${listing.ListPrice}</p>
+
+                            <p id="current-listings-price">${listing.ListPrice.toLocaleString()}</p>
+
+                            {daysAgo !== null && (
+                                <p className="current-listings-days">
+                                    Listed {daysAgo} day{daysAgo !== 1 ? "s" : ""} ago
+                                </p>
+                            )}
                         </div>
                     </a>
-                ))}
+                );
+            })}
         </div>
     );
 }

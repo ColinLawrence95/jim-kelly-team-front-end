@@ -36,7 +36,7 @@ function Footer() {
         </a>
       </div>
       <p className="footer-credit">
-        Crafted by{" "}
+        Built by{" "}
         <a
           href="https://codebycolin.com"
           target="_blank"

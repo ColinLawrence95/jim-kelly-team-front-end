@@ -4,15 +4,14 @@ h1, h2, p {
 body {
     margin: 0 10rem 0 10rem;
     background-color: whitesmoke;
+    max-width: 1600px;
+    
 }
 html {
     width: 100%;
     margin: 0;
-}
-@media (max-width: 738px){
-   body{
-    margin: 0;
-   }
+    display: flex;
+    justify-content: center;
 }
 a{
     text-decoration: none;

@@ -129,7 +129,7 @@ const ContactForm: React.FC = () => {
                     <option value="1-3 months">1–3 months</option>
                     <option value="3-6 months">3–6 months</option>
                     <option value="6+ months">6+ months</option>
-                    <option value="Just browsing">Undecided</option>
+                    <option value="Undecided">Undecided</option>
                 </select>
 
                 <button type="submit" disabled={isSending}>

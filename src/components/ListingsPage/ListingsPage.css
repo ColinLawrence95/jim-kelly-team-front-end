@@ -1,0 +1,36 @@
+.listings-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+#listings-page-title{
+margin-top: 50px;
+margin-bottom: 10px;
+font-size: 55px;
+}
+.listings-page-sort {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.listings-page-sort select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 16px;
+    font-family: inherit;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listings-page-sort select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
