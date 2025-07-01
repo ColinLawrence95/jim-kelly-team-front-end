@@ -4,13 +4,13 @@
     justify-content: center;
     align-items: left;
 }
+
 #listings-page-title{
 margin-top: 50px;
 margin-bottom: 10px;
 font-size: 55px;
 }
 .listings-page-sort {
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;

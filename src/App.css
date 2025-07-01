@@ -26,3 +26,8 @@ a{
 .app-content {
   flex: 1;
 }
+@media (min-width: 768px) {
+  html {
+    overflow-y: scroll;
+  }
+}

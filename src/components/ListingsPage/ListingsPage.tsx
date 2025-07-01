@@ -38,19 +38,21 @@ function ListingsPage() {
 
     return (
         <div className="listings-page-container">
-            <h1 id="listings-page-title">Current Listings</h1>
+            <div className="listings-page-top-container">
+                <h1 id="listings-page-title">Current Listings</h1>
 
-            <div className="listings-page-sort">
-                <select
-                    id="sort"
-                    value={sortType}
-                    onChange={(e) => setSortType(e.target.value as SortType)}
-                >
-                    <option value="price-asc">Price: Low to High</option>
-                    <option value="price-desc">Price: High to Low</option>
-                    <option value="date-newest">Date: Newest</option>
-                    <option value="date-oldest">Date: Oldest</option>
-                </select>
+                <div className="listings-page-sort">
+                    <select
+                        id="sort"
+                        value={sortType}
+                        onChange={(e) => setSortType(e.target.value as SortType)}
+                    >
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="date-newest">Date: Newest</option>
+                        <option value="date-oldest">Date: Oldest</option>
+                    </select>
+                </div>
             </div>
 
             {loading ? (

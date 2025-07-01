@@ -1,0 +1,95 @@
+/* Container */
+#buyersguide-article {
+  max-width: 1600px;
+  margin: 50px auto;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.65;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Headings */
+#buyersguide-article h1.buyersguide-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #003366; /* Dark blue */
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.3rem;
+}
+
+#buyersguide-article h2.buyersguide-subtitle {
+  font-size: 1.9rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00509e;
+  border-bottom: 2px solid #90caf9;
+  padding-bottom: 0.25rem;
+}
+
+#buyersguide-article h3.buyersguide-step-title {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #007bff;
+}
+
+/* Paragraphs */
+#buyersguide-article p.buyersguide-paragraph {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Lists */
+#buyersguide-article ul.buyersguide-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#buyersguide-article ul.buyersguide-list li.buyersguide-list-item {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Strong text */
+#buyersguide-article strong.buyersguide-strong {
+  color: #004080;
+}
+
+#buyersguide-article ul.buyersguide-list li.buyersguide-list-item strong.buyersguide-strong {
+  background-color: #e7f1ff;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Links */
+#buyersguide-article a.buyersguide-link {
+  color: #00509e;
+  text-decoration: underline;
+}
+
+#buyersguide-article a.buyersguide-link:hover {
+  color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #buyersguide-article {
+    padding: 0 10px;
+  }
+
+  #buyersguide-article h1.buyersguide-title {
+    font-size: 2rem;
+  }
+
+  #buyersguide-article h2.buyersguide-subtitle {
+    font-size: 1.5rem;
+  }
+
+  #buyersguide-article h3.buyersguide-step-title {
+    font-size: 1.2rem;
+  }
+}

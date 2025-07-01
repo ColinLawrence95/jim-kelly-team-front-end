@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./FeaturedListings.css";
 
 interface Listing {
     ListPrice: number;
@@ -7,6 +8,7 @@ interface Listing {
     MediaURL?: string;
     ListingKey: string;
     MlsStatus: string;
+    ListingContractDate: string;
 }
 
 const isActive = ["New", "Extension", "Price Change"];
@@ -18,11 +20,16 @@ function FeaturedListings() {
         const fetchTopListings = async () => {
             try {
                 const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
-                const activeListings = response.data.filter(listing =>
+                const activeListings = response.data.filter((listing) =>
                     isActive.includes(listing.MlsStatus)
                 );
-                const sorted = [...activeListings].sort((a, b) => b.ListPrice - a.ListPrice);
-                setTopListings(sorted.slice(0, 2));
+                const sorted = [...activeListings].sort(
+                    (a, b) =>
+                        new Date(b.ListingContractDate).getTime() -
+                        new Date(a.ListingContractDate).getTime()
+                );
+
+                setTopListings(sorted.slice(0, 3));
             } catch (error) {
                 console.error("Failed to fetch top listings", error);
             }
@@ -33,7 +40,7 @@ function FeaturedListings() {
 
     return (
         <section className="featured-listings-container">
-            <h2>Featured Listings</h2>
+            <h2 id="featured-listings-title">Featured Listings</h2>
             <div className="featured-listings-grid">
                 {topListings.map((listing) => (
                     <a

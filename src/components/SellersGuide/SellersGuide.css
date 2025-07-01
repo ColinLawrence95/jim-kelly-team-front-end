@@ -1,0 +1,95 @@
+/* Container */
+#sellersguide-article {
+  max-width: 1600px;
+  margin: 50px auto;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.65;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Headings */
+#sellersguide-article h1.sellersguide-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #8b0000; /* Dark red tone */
+  border-bottom: 3px solid #dc3545;
+  padding-bottom: 0.3rem;
+}
+
+#sellersguide-article h2.sellersguide-subtitle {
+  font-size: 1.9rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #b22222;
+  border-bottom: 2px solid #f5b5b5;
+  padding-bottom: 0.25rem;
+}
+
+#sellersguide-article h3.sellersguide-step-title {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #dc3545;
+}
+
+/* Paragraphs */
+#sellersguide-article p.sellersguide-paragraph {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Lists */
+#sellersguide-article ul.sellersguide-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#sellersguide-article ul.sellersguide-list li.sellersguide-list-item {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Strong text */
+#sellersguide-article strong.sellersguide-strong {
+  color: #a10000;
+}
+
+#sellersguide-article ul.sellersguide-list li.sellersguide-list-item strong.sellersguide-strong {
+  background-color: #fdecea;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Links */
+#sellersguide-article a.sellersguide-link {
+  color: #a10000;
+  text-decoration: underline;
+}
+
+#sellersguide-article a.sellersguide-link:hover {
+  color: #6c0000;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #sellersguide-article {
+    padding: 0 10px;
+  }
+
+  #sellersguide-article h1.sellersguide-title {
+    font-size: 2rem;
+  }
+
+  #sellersguide-article h2.sellersguide-subtitle {
+    font-size: 1.5rem;
+  }
+
+  #sellersguide-article h3.sellersguide-step-title {
+    font-size: 1.2rem;
+  }
+}

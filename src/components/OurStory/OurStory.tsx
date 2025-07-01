@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 function OurStory() {
     return (
         <div className="our-story-container">
+            <h2 id="our-story-title">Our Story</h2>
             <div className="our-story-title-and-text">
-                <h2 id="our-story-title">Our Story</h2>
+                
                 <p>
                     The Jim Kelly Team is more than just a group of real estate professionals —
                     we’re family. That’s why treating our clients like family is at the heart of
