@@ -39,7 +39,7 @@ function ListingsPage() {
     return (
         <div className="listings-page-container">
             <div className="listings-page-top-container">
-                <h1 id="listings-page-title">Current Listings</h1>
+                <h1 id="listings-page-title">FEATURED LISTINGS</h1>
 
                 <div className="listings-page-sort">
                     <select

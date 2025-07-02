@@ -1,9 +1,9 @@
-h1, h2, p {
+h1, h2, h3, p {
     margin: 0;
 }
 body {
     margin: 0 10rem 0 10rem;
-    background-color: whitesmoke;
+    background-color: rgb(219, 217, 217);
     max-width: 1600px;
     
 }

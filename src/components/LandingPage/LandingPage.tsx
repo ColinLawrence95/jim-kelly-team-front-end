@@ -7,8 +7,8 @@ function LandingPage() {
     return (
         <>
             <Hero />
-            <FeaturedListings />
             <OurStory />
+            <FeaturedListings />
             <Testimonials />
         </>
     );

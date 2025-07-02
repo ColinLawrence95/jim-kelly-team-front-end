@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .nav-bar-container {
-    background-color: rgba(144, 179, 253, 0.801);
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+   
 
 }
 .nav-bar-contents {
@@ -11,15 +12,18 @@
     justify-content: space-between;
     margin: 0 30px 0 30px;
     width: 200rem;
+    font-family: "Barlow";
+    font-weight: Thin 100;
 }
 .nav-bar-logo {
     background-size: cover;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 75px;
-    height: 25px;
+    width: 275px;
+    height: 125px;
+    margin-right: 250px;
 }
-.nav-bar-contents h4{
+.nav-bar-contents p{
     font-size: 21px;
 }

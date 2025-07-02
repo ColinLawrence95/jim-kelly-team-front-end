@@ -38,7 +38,7 @@ function Testimonials() {
                         .map((review) => (
                             <div key={review.time} className="testimonials-element">
                                 <div className="review-text">
-                                    <p>{review.text}</p>
+                                    <p id="testimonials-text">{review.text}</p>
                                 </div>
                                 <div className="review-author">
                                     <p>{"⭐".repeat(review.rating)}</p>
