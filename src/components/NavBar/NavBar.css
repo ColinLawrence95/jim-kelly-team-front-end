@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 30px 0 30px;
+    margin: 0 30px 0 0px;
     width: 200rem;
     font-family: "Barlow";
     font-weight: Thin 100;
@@ -26,4 +26,8 @@
 }
 .nav-bar-contents p{
     font-size: 21px;
+}
+
+.nav-bar-contents p:hover{
+    cursor: pointer;
 }
