@@ -12,7 +12,7 @@
    
     justify-content: space-between;
 
-    background-color: rgba(255, 255, 255, 0.616);
+    background-color: rgba(214, 214, 214, 0.692);
 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, .3);
 }
 .hero-title-and-button button {
     font-size: 30px;
@@ -32,14 +32,14 @@
 .hero-title-container {
     align-items: top;
 
-    margin-left: 50px;
+    margin-left: 20px;
     margin-top: 50px;
     border-radius: 50px;
     width: 720px;
     height: 700px;
 }
 #hero-title {
-    border-bottom: 3px solid #021f41;
+    border-bottom: 3px solid #af0000;
 }
 #hero-tagline {
     font-size: 40px;
@@ -50,9 +50,10 @@
     margin-top: 50px;
     height: 700px;
     width: 720px;
-    margin-right: 50px;
+    margin-right: 20px;
     border-radius: 50px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 }

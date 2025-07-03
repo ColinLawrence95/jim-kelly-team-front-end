@@ -9,7 +9,7 @@ interface Listing {
     MlsStatus: string;
     MediaURL?: string;
     ListingKey: string;
-    ListingContractDate?: string; 
+    ListingContractDate?: string;
 }
 
 const isActive = ["New", "Extension", "Price Change"];
@@ -17,7 +17,6 @@ interface Props {
     sortType: "price-asc" | "price-desc" | "date-newest" | "date-oldest";
     listings: Listing[];
 }
-
 
 function CurrentListings({ sortType }: Props) {
     const [listings, setListings] = useState<Listing[]>([]);
@@ -78,7 +77,12 @@ function CurrentListings({ sortType }: Props) {
                         className="current-listings-link"
                     >
                         <div className="current-listings-element">
-                            <p id="current-listings-address">{listing.UnparsedAddress}</p>
+                            <p id="current-listings-address">
+                                {listing.UnparsedAddress.replace(
+                                    /,\s*[A-Z]{2}\s+[A-Z]\d[A-Z]\s*\d[A-Z]\d$/,
+                                    ""
+                                )}
+                            </p>
 
                             {listing.MediaURL ? (
                                 <img
@@ -95,11 +99,7 @@ function CurrentListings({ sortType }: Props) {
 
                             <p id="current-listings-price">${listing.ListPrice.toLocaleString()}</p>
 
-                            {daysAgo !== null && (
-                                <p className="current-listings-days">
-                                   
-                                </p>
-                            )}
+                            {daysAgo !== null && <p className="current-listings-days"></p>}
                         </div>
                     </a>
                 );

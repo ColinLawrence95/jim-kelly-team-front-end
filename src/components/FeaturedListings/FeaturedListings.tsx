@@ -51,7 +51,13 @@ function FeaturedListings() {
                         className="featured-listing-link"
                     >
                         <div className="featured-listing-card">
-                            <p className="featured-address">{listing.UnparsedAddress}</p>
+                            <p className="featured-address">
+                                {listing.UnparsedAddress.replace(
+                                    /,\s*[A-Z]{2}\s+[A-Z]\d[A-Z]\s*\d[A-Z]\d$/,
+                                    ""
+                                )}
+                            </p>
+
                             {listing.MediaURL ? (
                                 <img
                                     className="featured-image"
