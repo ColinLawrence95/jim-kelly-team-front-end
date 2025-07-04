@@ -5,14 +5,17 @@ import "./Footer.css";
 function Footer() {
     return (
         <footer className="site-footer">
-            <div className="footer-logo" style={{ backgroundImage: `url(/REMAX_logo.png)` }}  />
-            
-            <div className="footer-link-wrap">
-                <p></p>
-                <p className="footer-copy">
-                    © {new Date().getFullYear()} The Jim Kelly Team.
-                </p>
+            <div className="footer-logo">
+                <div className="logo-img" />
+                <h1>RE/MAX Hallmark First Group Realty Ltd.</h1>
+                <h2>
+                  314 Harwood Ave S Unit 200, Ajax, ON L1S
+                    2J1 
+                </h2>
+                <h3>905-683-5000</h3>
+            </div>
 
+            <div className="footer-link-wrap">
                 <div className="footer-socials">
                     <a
                         href="https://www.facebook.com/opreyrealestate"
@@ -31,6 +34,7 @@ function Footer() {
                         <FaInstagram />
                     </a>
                 </div>
+                <p className="footer-copy">© {new Date().getFullYear()} The Jim Kelly Team.</p>
                 <p className="footer-credit">
                     Built by{" "}
                     <a

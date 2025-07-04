@@ -3,30 +3,39 @@
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto auto auto; /* 3 rows: socials+right on 1, logo on 2, footer text on 3 */
   align-items: center;
-  padding: 2rem 1rem;
-  background-color: #ffffff;
-  color: #555;
+  padding: 20px;
+  background-color: #bebebe;
+  color: #000000;
   font-size: 0.9rem;
-  border-top: 1px solid #ffffff;
   text-align: center;
   position: relative;
-  row-gap: 1rem; /* spacing between rows */
+  row-gap: 0rem; /* spacing between rows */
 }
 .footer-desc{
-      grid-column: 1;
+    grid-column: 1;
   grid-row:4;
-  disp
 }
+
 /* Logo moved to 1st column, 2nd row */
 .footer-logo {
   grid-column: 1;
-  grid-row:3;
+  grid-row: 3;
   justify-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  width: 550px;
+}
+
+.logo-img {
   width: 200px;
   height: 100px;
+  background-image: url(/REMAX_logo.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  text-align: left;
 }
 
 /* Socials centered in middle, row 1 */
@@ -42,13 +51,13 @@
 
 .footer-socials a {
   color: #000000;
-  font-size: 2rem;
+  font-size: 40px;
   transition: color 0.3s ease;
 }
 
 .footer-socials a:hover,
 .footer-socials a:focus {
-  color: #61dafb;
+  color: #090cb3;
   outline: none;
 }
 
@@ -72,7 +81,7 @@
 .footer-copy,
 .footer-credit {
   margin: 0.3rem 0;
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 /* Designer link */
@@ -80,13 +89,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #555;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .designer-link:hover {
-  color: rgb(136, 7, 7);
+  color: rgb(168, 8, 8);
 }
 
 /* Profile pic */
