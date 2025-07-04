@@ -2,26 +2,31 @@
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    background-color: #202020;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
 #featured-listings-title {
     display: flex;
     justify-content: center;
     font-size: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-family: "Barlow";
+    color: white;
+     text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
 .featured-listings-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .featured-listing-card {
-    background-color: #021f41;
+    
     padding: 10px 20px 10px 20px;
     font-family: "Alice";
-    font-size: 20px;
+    font-size: 24px;
     color: white;
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,8 +35,22 @@
     height: 360px;
 }
 .featured-image {
-    width: 460px;
+    width: 490px;
     height: 324px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+#featured-more-listings{
+    width: 150px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 75px;
+    font-size: 16px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    background-color: whitesmoke;
+    border: none;
+}
+#featured-more-listings:hover{
+    cursor: pointer;
 }

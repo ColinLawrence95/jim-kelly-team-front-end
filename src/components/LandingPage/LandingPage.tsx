@@ -8,8 +8,9 @@ function LandingPage() {
         <>
             <Hero />
             <OurStory />
-            <FeaturedListings />
             <Testimonials />
+            <FeaturedListings />
+            
         </>
     );
 }

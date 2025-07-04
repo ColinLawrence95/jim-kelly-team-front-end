@@ -18,7 +18,7 @@ function OurStory() {
                     trends to help you make informed, strategic decisions.
                 </p>
                 <Link to="/about">
-                    <button>Read More</button>
+                    <button>READ MORE</button>
                 </Link>
             </div>
         </div>

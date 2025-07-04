@@ -76,11 +76,10 @@ const ContactForm: React.FC = () => {
     return (
         <div className="contact-form-container">
             <form onSubmit={handleSubmit} className="contact-form">
-                <h1>Contact Us</h1>
-
+                <h1 id="contact-form-title">CONTACT US</h1>
+                
                 <input
                     name="name"
-                    value={formData.name}
                     onChange={handleChange}
                     placeholder="Full Name"
                     required
@@ -133,7 +132,7 @@ const ContactForm: React.FC = () => {
                 </select>
 
                 <button type="submit" disabled={isSending}>
-                    {isSending ? "Sending..." : "Send"}
+                    {isSending ? "SENDING..." : "SEND"}
                 </button>
                 {status && <p>{status}</p>}
             </form>

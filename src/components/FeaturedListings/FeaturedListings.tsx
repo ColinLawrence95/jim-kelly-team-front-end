@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./FeaturedListings.css";
 
@@ -19,7 +20,9 @@ function FeaturedListings() {
     useEffect(() => {
         const fetchTopListings = async () => {
             try {
-                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
+                const response = await axios.get<Listing[]>(
+                    "http://localhost:3000/api/listings"
+                );
                 const activeListings = response.data.filter((listing) =>
                     isActive.includes(listing.MlsStatus)
                 );
@@ -67,11 +70,16 @@ function FeaturedListings() {
                             ) : (
                                 <p>No photo available</p>
                             )}
-                            <p className="featured-price">${listing.ListPrice.toLocaleString()}</p>
+                            <p className="featured-price">
+                                ${listing.ListPrice.toLocaleString()}
+                            </p>
                         </div>
                     </a>
                 ))}
             </div>
+            <Link to="/listings">
+                <button id="featured-more-listings">MORE LISTINGS</button>
+            </Link>
         </section>
     );
 }

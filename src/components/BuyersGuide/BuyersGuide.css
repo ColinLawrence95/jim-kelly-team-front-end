@@ -1,22 +1,25 @@
 /* Container */
 #buyersguide-article {
-  max-width: 1600px;
-  margin: 50px auto;
+  max-width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+  
   padding: 0 20px;
   padding-bottom: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.65;
   color: #333;
-  background-color: #fff;
 }
-
+.buyers-page-container{
+  background-color: white;
+}
 /* Headings */
 #buyersguide-article h1.buyersguide-title {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #003366; /* Dark blue */
-  border-bottom: 3px solid #007bff;
+  color: #000000; /* Dark blue */
+  border-bottom: 3px solid #000000;
   padding-bottom: 0.3rem;
 }
 
@@ -24,8 +27,8 @@
   font-size: 1.9rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: #00509e;
-  border-bottom: 2px solid #90caf9;
+  color: #000000;
+  border-bottom: 2px solid #000000;
   padding-bottom: 0.25rem;
 }
 
@@ -33,13 +36,13 @@
   font-size: 1.4rem;
   margin-top: 2rem;
   margin-bottom: 0.8rem;
-  color: #007bff;
+  color: #000000;
 }
 
 /* Paragraphs */
 #buyersguide-article p.buyersguide-paragraph {
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Lists */
@@ -51,28 +54,23 @@
 
 #buyersguide-article ul.buyersguide-list li.buyersguide-list-item {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 /* Strong text */
 #buyersguide-article strong.buyersguide-strong {
-  color: #004080;
+  color: #000000;
 }
 
-#buyersguide-article ul.buyersguide-list li.buyersguide-list-item strong.buyersguide-strong {
-  background-color: #e7f1ff;
-  padding: 2px 5px;
-  border-radius: 3px;
-}
 
 /* Links */
 #buyersguide-article a.buyersguide-link {
-  color: #00509e;
+  color: #000000;
   text-decoration: underline;
 }
 
 #buyersguide-article a.buyersguide-link:hover {
-  color: #003366;
+  color: #000000;
 }
 
 /* Responsive */

@@ -1,52 +1,99 @@
 .site-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #ffffff;
-    color: #555;
-    font-size: 0.9rem;
-    border-top: 1px solid #ddd;
-    margin-top: 50px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto auto; /* 3 rows: socials+right on 1, logo on 2, footer text on 3 */
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  color: #555;
+  font-size: 0.9rem;
+  border-top: 1px solid #ffffff;
+  text-align: center;
+  position: relative;
+  row-gap: 1rem; /* spacing between rows */
+}
+.footer-desc{
+      grid-column: 1;
+  grid-row:4;
+  disp
+}
+/* Logo moved to 1st column, 2nd row */
+.footer-logo {
+  grid-column: 1;
+  grid-row:3;
+  justify-self: start;
+  width: 200px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-.footer-copy,
-.footer-credit {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-}
-
-.designer-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-.designer-link:hover{
-    color: rgb(136, 7, 7);
-}
-.profile-pic {
-    border-radius: 50%;
-    display: inline-block;
-}
-
+/* Socials centered in middle, row 1 */
 .footer-socials {
-    margin-top: 0.8rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .footer-socials a {
-    color: #000000;
-    font-size: 2rem;
-    transition: color 0.3s ease;
+  color: #000000;
+  font-size: 2rem;
+  transition: color 0.3s ease;
 }
 
 .footer-socials a:hover,
 .footer-socials a:focus {
-    color: #61dafb;
-    outline: none;
+  color: #61dafb;
+  outline: none;
+}
+
+/* Right column (empty or optional), row 1 */
+.site-footer > *:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Footer text spanning all columns, row 3 */
+.footer-link-wrap {
+  grid-column: 1 / -1; /* span all columns */
+  grid-row: 3;
+  margin-top: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.footer-copy,
+.footer-credit {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+/* Designer link */
+.designer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.designer-link:hover {
+  color: rgb(136, 7, 7);
+}
+
+/* Profile pic */
+.profile-pic {
+  border-radius: 50%;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
 }

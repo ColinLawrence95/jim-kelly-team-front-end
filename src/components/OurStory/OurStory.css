@@ -30,7 +30,11 @@
 .our-story-title-and-text button {
     font-size: 20px;
     margin-top: 40px;
-    border-radius: 12px;
     padding: 20px;
     margin-bottom: 40px;
+    color: whitesmoke;
+    background-color: black;
+    border: none;
+    font-weight: bold;
+    font-family: "Montserrat";
 }
