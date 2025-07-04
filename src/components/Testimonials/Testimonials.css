@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction: row;
     margin-top: 50px;
+   
 }
 #testimonials-title {
     display: flex;
@@ -13,8 +14,9 @@
     font-size: 50px;
     font-family: "Barlow";
 }
-#testimonals-text {
+#testimonials-text  {
     font-family: "Alice";
+    margin: 40px;
 }
 .testimonials-element {
     width: 470px;
