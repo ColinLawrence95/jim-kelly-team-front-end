@@ -1,57 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 .featured-listings-container {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
     margin-bottom: 50px;
     padding-bottom: 40px;
-    padding-top: 40px;
-    background-color: #202020;
-     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
-}
-#featured-listings-title {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    margin-bottom: 40px;
-    font-family: "Barlow";
-    color: white;
-     text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    margin-top: 80px;
+    font-family: "Inter";
 }
 .featured-listings-grid {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .featured-listing-card {
-    
-    padding: 10px 20px 10px 20px;
-    font-family: "Alice";
+    text-align: left;
     font-size: 24px;
-    color: white;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 470px;
-    height: 360px;
 }
 .featured-image {
-    width: 490px;
-    height: 324px;
+    width: 500px;
+    height: 370px;
     margin-top: 5px;
     margin-bottom: 5px;
+
 }
-#featured-more-listings{
+.featured-address {
+    font-size: 22px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: rgb(5, 19, 78);;
+}
+#city {
+    position: relative;
+    font-size: 18px;
+    padding-bottom: 10px; /* space for the border */
+    text-align: left;
+    color: rgb(104, 103, 103);
+}
+
+#city::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* align to the left */
+    width: 60px; /* set the desired shorter length */
+    height: 2px;
+    background-color: rgb(5, 19, 78);
+}
+
+.featured-price {
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(5, 19, 78);
+}
+#featured-more-listings {
     width: 150px;
     height: 50px;
-    margin-top: 30px;
-    margin-left: 75px;
+ margin-top: 30px;
     font-size: 16px;
     font-family: "Montserrat";
     font-weight: bold;
-    background-color: whitesmoke;
+    background-color: transparent;
     border: none;
 }
-#featured-more-listings:hover{
+#featured-more-listings:hover {
     cursor: pointer;
 }

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import "./OurStory.css";
 import { Link } from "react-router-dom";
 
@@ -18,7 +19,20 @@ function OurStory() {
                     trends to help you make informed, strategic decisions.
                 </p>
                 <Link to="/about">
-                    <button>READ MORE</button>
+                    <motion.button
+                        whileHover={{
+                            scale: 1.08,
+                            transition: {
+                                type: "spring",
+                                stiffness: 300,
+                                damping: 20,
+                            },
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        className="our-story-button"
+                    >
+                        READ MORE
+                    </motion.button>
                 </Link>
             </div>
         </div>

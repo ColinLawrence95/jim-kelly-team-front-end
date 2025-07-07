@@ -3,6 +3,7 @@ import CurrentListings from "../CurrentListings/CurrentListings";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "./ListingsPage.css";
+import { motion } from "framer-motion";
 
 type SortType = "price-asc" | "price-desc" | "date-newest" | "date-oldest";
 
@@ -24,7 +25,9 @@ function ListingsPage() {
     useEffect(() => {
         async function fetchListings() {
             try {
-                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
+                const response = await axios.get<Listing[]>(
+                    "http://localhost:3000/api/listings"
+                );
                 setListings(response.data || []);
             } catch (error) {
                 console.error("Error fetching listings:", error);
@@ -37,7 +40,12 @@ function ListingsPage() {
     }, []);
 
     return (
-        <div className="listings-page-container">
+        <motion.div
+            className="listings-page-container"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+        >
             <div className="listings-page-top-container">
                 <h1 id="listings-page-title">FEATURED LISTINGS</h1>
 
@@ -45,7 +53,9 @@ function ListingsPage() {
                     <select
                         id="sort"
                         value={sortType}
-                        onChange={(e) => setSortType(e.target.value as SortType)}
+                        onChange={(e) =>
+                            setSortType(e.target.value as SortType)
+                        }
                     >
                         <option value="price-asc">Price: Low to High</option>
                         <option value="price-desc">Price: High to Low</option>
@@ -56,11 +66,17 @@ function ListingsPage() {
             </div>
 
             {loading ? (
-                <p>Loading listings...</p>
+                <p id="listings-page-loading">Loading listings...</p>
             ) : (
-                <CurrentListings sortType={sortType} listings={listings} />
+                <motion.div
+                    initial={{ opacity: 0,  }}
+                    animate={{ opacity: 1, }}
+                    transition={{ duration: 1, delay: 1.5 }}
+                >
+                    <CurrentListings sortType={sortType} listings={listings} />
+                </motion.div>
             )}
-        </div>
+        </motion.div>
     );
 }
 

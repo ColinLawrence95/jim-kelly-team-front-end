@@ -24,7 +24,9 @@ function CurrentListings({ sortType }: Props) {
     useEffect(() => {
         async function fetchListings() {
             try {
-                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
+                const response = await axios.get<Listing[]>(
+                    "http://localhost:3000/api/listings"
+                );
                 setListings(response.data || []);
             } catch (error) {
                 console.error("Failed to fetch listings", error);
@@ -77,29 +79,38 @@ function CurrentListings({ sortType }: Props) {
                         className="current-listings-link"
                     >
                         <div className="current-listings-element">
-                            <p id="current-listings-address">
-                                {listing.UnparsedAddress.replace(
-                                    /,\s*[A-Z]{2}\s+[A-Z]\d[A-Z]\s*\d[A-Z]\d$/,
-                                    ""
-                                )}
-                            </p>
-
                             {listing.MediaURL ? (
                                 <img
                                     className="current-listings-image"
                                     src={listing.MediaURL}
                                     alt="Listing"
                                     onError={() =>
-                                        console.error("Failed to load image:", listing.MediaURL)
+                                        console.error(
+                                            "Failed to load image:",
+                                            listing.MediaURL
+                                        )
                                     }
                                 />
                             ) : (
                                 <p>No photos available</p>
                             )}
+                            <p className="featured-address">
+                                {listing.UnparsedAddress.split(",")[0]}
+                                <br />
+                                <p id="city">
+                                    {listing.UnparsedAddress.split(
+                                        ","
+                                    )[1]?.trim()}
+                                </p>
+                            </p>
 
-                            <p id="current-listings-price">${listing.ListPrice.toLocaleString()}</p>
+                            <p className="featured-price">
+                                ${listing.ListPrice.toLocaleString()}
+                            </p>
 
-                            {daysAgo !== null && <p className="current-listings-days"></p>}
+                            {daysAgo !== null && (
+                                <p className="current-listings-days"></p>
+                            )}
                         </div>
                     </a>
                 );

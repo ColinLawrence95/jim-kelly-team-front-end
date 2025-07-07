@@ -1,7 +1,13 @@
 import "./AboutPage.css";
+import { motion } from "framer-motion";
 function AboutPage() {
     return (
-        <div className="about-page-container">
+        <motion.div
+            className="about-page-container"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+        >
             <div
                 className="about-header-back"
                 style={{ backgroundImage: `url(/house2.png)` }}
@@ -12,7 +18,6 @@ function AboutPage() {
                 </div>
             </div>
             <div className="about-team-image-and-desc">
-                <h1 id="about-team-title">About The Team</h1>
                 <div
                     className="about-team-image"
                     style={{ backgroundImage: `url(/about-team-image.JPG)` }}
@@ -138,7 +143,7 @@ function AboutPage() {
                     guidance throughout their real estate journey.
                 </p>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

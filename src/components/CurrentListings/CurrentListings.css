@@ -5,6 +5,7 @@
     justify-content: space-evenly;
     width: 100%;
     margin-top: 50px;
+    font-family: "Inter";
 }
 .current-listings-element-container {
     display: flex;
@@ -16,28 +17,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
  
     margin-bottom: 50px;
   
-    padding: 10px 45px 0 45px;
+
    
 }
 .current-listings-image {
     height: 400px;
-    width: 500px;
+    width: 550px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-#current-listings-price,
-#current-listings-address {
-    font-size: 29px;
-    font-family: "Alice";
-}
-.current-listings-days {
-    margin-bottom: 10px;
-}
 /* .current-listings-arrow-left,
 .current-listings-arrow-right {
     color: rgb(43, 43, 43);

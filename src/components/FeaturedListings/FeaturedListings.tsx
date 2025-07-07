@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./FeaturedListings.css";
+import { motion } from "framer-motion";
 
 interface Listing {
     ListPrice: number;
@@ -43,7 +44,6 @@ function FeaturedListings() {
 
     return (
         <section className="featured-listings-container">
-            <h2 id="featured-listings-title">Featured Listings</h2>
             <div className="featured-listings-grid">
                 {topListings.map((listing) => (
                     <a
@@ -53,32 +53,64 @@ function FeaturedListings() {
                         rel="noopener noreferrer"
                         className="featured-listing-link"
                     >
-                        <div className="featured-listing-card">
-                            <p className="featured-address">
-                                {listing.UnparsedAddress.replace(
-                                    /,\s*[A-Z]{2}\s+[A-Z]\d[A-Z]\s*\d[A-Z]\d$/,
-                                    ""
-                                )}
-                            </p>
-
+                        <motion.div
+                            className="featured-listing-card"
+                            whileHover={{
+                                scale: 1.03,
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 20,
+                                },
+                            }}
+                        >
                             {listing.MediaURL ? (
-                                <img
+                                <motion.img
                                     className="featured-image"
                                     src={listing.MediaURL}
                                     alt="Listing"
+                                    whileHover={{
+                                        scale: 1.01,
+                                        transition: {
+                                            type: "spring",
+                                            stiffness: 10,
+                                            damping: 182,
+                                        },
+                                    }}
                                 />
                             ) : (
                                 <p>No photo available</p>
                             )}
+                            <p className="featured-address">
+                                {listing.UnparsedAddress.split(",")[0]}
+                                <br />
+                                <p id="city">{listing.UnparsedAddress.split(",")[1]?.trim()}</p>
+                                
+                            </p>
+
                             <p className="featured-price">
                                 ${listing.ListPrice.toLocaleString()}
                             </p>
-                        </div>
+                        </motion.div>
                     </a>
                 ))}
             </div>
+
             <Link to="/listings">
-                <button id="featured-more-listings">MORE LISTINGS</button>
+                <motion.button
+                    id="featured-more-listings"
+                    whileHover={{
+                        scale: 1.08,
+                        transition: {
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                        },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    MORE LISTINGS
+                </motion.button>
             </Link>
         </section>
     );
