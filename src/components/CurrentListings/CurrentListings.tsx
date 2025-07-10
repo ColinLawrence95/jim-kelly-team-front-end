@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import "./CurrentListings.css";
 import { motion } from "framer-motion";
 
@@ -12,29 +10,16 @@ interface Listing {
     ListingKey: string;
     ListingContractDate?: string;
 }
-const LISTING_API = import.meta.env.VITE_LISTINGS_URL
 
 const isActive = ["New", "Extension", "Price Change"];
+
 interface Props {
     sortType: "price-asc" | "price-desc" | "date-newest" | "date-oldest";
     listings: Listing[];
 }
 
-function CurrentListings({ sortType }: Props) {
-    const [listings, setListings] = useState<Listing[]>([]);
-
-    useEffect(() => {
-        async function fetchListings() {
-            try {
-                const response = await axios.get<Listing[]>(LISTING_API);
-                setListings(response.data || []);
-            } catch (error) {
-                console.error("Failed to fetch listings", error);
-            }
-        }
-        fetchListings();
-    }, []);
-
+function CurrentListings({ sortType, listings }: Props) {
+    // Helper to calculate how many days ago the listing was posted
     const getDaysAgo = (dateString?: string): number | null => {
         if (!dateString) return null;
         const listingDate = new Date(dateString);
@@ -43,7 +28,8 @@ function CurrentListings({ sortType }: Props) {
         return Math.floor(diffTime / (1000 * 60 * 60 * 24));
     };
 
-    const filteredAndSortedListings = listings
+    // Filter by active status and sort based on sortType
+    const filteredAndSortedListings: Listing[] = listings
         .filter((listing) => isActive.includes(listing.MlsStatus))
         .sort((a, b) => {
             switch (sortType) {
@@ -68,8 +54,9 @@ function CurrentListings({ sortType }: Props) {
 
     return (
         <div className="current-listings-container">
-            {filteredAndSortedListings.map((listing, index) => {
+            {filteredAndSortedListings.map((listing: Listing, index: number) => {
                 const daysAgo = getDaysAgo(listing.ListingContractDate);
+
                 return (
                     <a
                         key={index}
@@ -82,11 +69,7 @@ function CurrentListings({ sortType }: Props) {
                             className="current-listings-element"
                             whileHover={{
                                 scale: 1.03,
-                                transition: {
-                                    type: "spring",
-                                    stiffness: 200,
-                                    damping: 20,
-                                },
+                                transition: { type: "spring", stiffness: 200, damping: 20 },
                             }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -102,6 +85,7 @@ function CurrentListings({ sortType }: Props) {
                             ) : (
                                 <p>No photos available</p>
                             )}
+
                             <p className="featured-address">
                                 {listing.UnparsedAddress.split(",")[0]}
                                 <br />
@@ -110,9 +94,15 @@ function CurrentListings({ sortType }: Props) {
                                 </span>
                             </p>
 
-                            <p className="featured-price">${listing.ListPrice.toLocaleString()}</p>
+                            <p className="featured-price">
+                                ${listing.ListPrice.toLocaleString()}
+                            </p>
 
-                            {daysAgo !== null && <p className="current-listings-days"></p>}
+                            {daysAgo !== null && (
+                                <p className="current-listings-days">
+                                    Listed {daysAgo} day{daysAgo === 1 ? "" : "s"} ago
+                                </p>
+                            )}
                         </motion.div>
                     </a>
                 );

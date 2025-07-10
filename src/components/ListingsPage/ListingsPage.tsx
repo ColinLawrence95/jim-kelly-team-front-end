@@ -22,16 +22,17 @@ const pageVariants = {
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: 50 },
 };
-
+  const LISTING_API = import.meta.env.VITE_LISTINGS_URL;
 function ListingsPage() {
     const [sortType, setSortType] = useState<SortType>("price-asc");
     const [listings, setListings] = useState<Listing[]>([]);
     const [loading, setLoading] = useState(true);
+  
 
     useEffect(() => {
         async function fetchListings() {
             try {
-                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
+                const response = await axios.get<Listing[]>(LISTING_API);
                 setListings(response.data || []);
             } catch (error) {
                 console.error("Error fetching listings:", error);
