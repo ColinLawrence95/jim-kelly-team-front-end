@@ -14,7 +14,7 @@ interface Listing {
 }
 
 const isActive = ["New", "Extension", "Price Change"];
-
+const LISTING_API = import.meta.env.VITE_LISTINGS_URL;
 
 
 function FeaturedListings() {
@@ -23,7 +23,7 @@ function FeaturedListings() {
     useEffect(() => {
         const fetchTopListings = async () => {
             try {
-                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
+                const response = await axios.get<Listing[]>(LISTING_API);
                 const activeListings = response.data.filter((listing) =>
                     isActive.includes(listing.MlsStatus)
                 );
