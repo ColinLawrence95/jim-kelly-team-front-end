@@ -6,19 +6,6 @@
     align-items: center;
 }
 
-#about-title {
-    font-size: 70px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: white;
-}
-#about-title::after {
-    content: "";
-    display: block;
-    width: 350px;
-    border-bottom: 3px solid #ffffff;
-    margin: 20px auto 0 auto;
-}
 #about-desc-header {
     font-size: 25px;
     margin-left: 30px;
@@ -28,45 +15,27 @@
     margin-top: 50px;
     font-size: 40px;
 }
-.about-header-back {
-    width: 100%;
-    background-size: cover;
-    background-position: 0px -600px;
-    background-repeat: no-repeat;
-}
-.about-header {
-    color: white;
-    font-family: "GFS Didot";
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+
+.about-team-image-and-desc {
+    position: relative;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(34, 34, 34, 0.74);
-    height: 400px;
-    width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
-}
-.about-team-image-and-desc {
-  position: relative;
-  color: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding-bottom: 50px;
+    text-align: left;
+    padding-bottom: 50px;
 }
 
 .about-team-image-and-desc::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 500px; /* shorter line */
-  height: 3px;
-  background-color: rgb(0, 0, 0);
-  left: 50%;
-  transform: translateX(-50%);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 500px; 
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .about-team-image {
@@ -92,18 +61,23 @@
 
 .about-container {
     display: flex;
-    align-items: center;
+    align-items: left;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 70px;
     width: 90%;
 }
+.about-element-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: top;
+    align-items: top;
+    font-family: "GFS Didot";
+}
 .about-image-name-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    font-family: "GFS Didot";
-
 }
 .about-jim-image,
 .about-connor-image,
@@ -113,16 +87,49 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-.about-syd-image{
-    margin-bottom: 70px;
+    margin-top: 20px;
 }
 
 .about-desc {
-    margin-left: 50px;
+    width: 100%;
+    margin-left: 40px;
+    margin-top: 55px;
     font-size: 25px;
     font-family: "Alice";
+}
+
+@media (max-width: 769px) {
+    .about-team-image {
+        min-width: 100vw;
+        max-width: 100vw;
+        max-height: 200px;
+        margin-top: 10px;
+    }
+    #about-team-desc {
+        width: 95vw;
+        font-size: 12px;
+        padding: 0;
+    }
+    .about-team-image-and-desc::after{
+        width: 150px;
+    }
+    .about-jim-image,
+    .about-connor-image,
+    .about-syd-image {
+        max-width: 250px;
+        max-height: 290px;
+
+
+    }
+    .about-desc{
+        font-size: 12px;
+        width: 95vw;
+        margin: 20px 0 0 0;
+    }
+    .about-element-container{
+        flex-direction: column;
+    }
+    .about-container{
+        margin-top: 20px;
+    }
 }

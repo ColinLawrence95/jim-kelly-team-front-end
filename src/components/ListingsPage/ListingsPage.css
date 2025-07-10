@@ -43,3 +43,17 @@ font-family: "Poppins";
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
+@media (max-width: 1024px) {
+    #listings-page-title{
+        margin: 20px 0 0 0;
+        font-size: 35px;
+    }
+    .listings-page-top-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .listings-page-sort {
+        margin: 0;
+    }
+}

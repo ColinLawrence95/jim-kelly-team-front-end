@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./CurrentListings.css";
+import { motion } from "framer-motion";
 
 interface Listing {
     ListPrice: number;
@@ -24,9 +25,7 @@ function CurrentListings({ sortType }: Props) {
     useEffect(() => {
         async function fetchListings() {
             try {
-                const response = await axios.get<Listing[]>(
-                    "http://localhost:3000/api/listings"
-                );
+                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
                 setListings(response.data || []);
             } catch (error) {
                 console.error("Failed to fetch listings", error);
@@ -78,17 +77,25 @@ function CurrentListings({ sortType }: Props) {
                         rel="noopener noreferrer"
                         className="current-listings-link"
                     >
-                        <div className="current-listings-element">
+                        <motion.div
+                            className="current-listings-element"
+                            whileHover={{
+                                scale: 1.03,
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 20,
+                                },
+                            }}
+                            whileTap={{ scale: 0.95 }}
+                        >
                             {listing.MediaURL ? (
                                 <img
                                     className="current-listings-image"
                                     src={listing.MediaURL}
                                     alt="Listing"
                                     onError={() =>
-                                        console.error(
-                                            "Failed to load image:",
-                                            listing.MediaURL
-                                        )
+                                        console.error("Failed to load image:", listing.MediaURL)
                                     }
                                 />
                             ) : (
@@ -97,21 +104,15 @@ function CurrentListings({ sortType }: Props) {
                             <p className="featured-address">
                                 {listing.UnparsedAddress.split(",")[0]}
                                 <br />
-                                <p id="city">
-                                    {listing.UnparsedAddress.split(
-                                        ","
-                                    )[1]?.trim()}
-                                </p>
+                                <span id="city">
+                                    {listing.UnparsedAddress.split(",")[1]?.trim()}
+                                </span>
                             </p>
 
-                            <p className="featured-price">
-                                ${listing.ListPrice.toLocaleString()}
-                            </p>
+                            <p className="featured-price">${listing.ListPrice.toLocaleString()}</p>
 
-                            {daysAgo !== null && (
-                                <p className="current-listings-days"></p>
-                            )}
-                        </div>
+                            {daysAgo !== null && <p className="current-listings-days"></p>}
+                        </motion.div>
                     </a>
                 );
             })}

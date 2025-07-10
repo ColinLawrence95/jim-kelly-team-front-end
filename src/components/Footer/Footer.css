@@ -1,7 +1,7 @@
 .site-footer {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto auto auto; /* 3 rows: socials+right on 1, logo on 2, footer text on 3 */
+  grid-template-rows: auto auto auto; 
   align-items: center;
   padding: 20px;
   background-color: #ffffff;
@@ -9,15 +9,17 @@
   font-size: 0.9rem;
   text-align: center;
   position: relative;
-  row-gap: 0rem; /* spacing between rows */
+  row-gap: 0rem;
   border-top: 1px solid grey;
-}
-.footer-desc{
-    grid-column: 1;
-  grid-row:4;
+  margin-top: 70px;
 }
 
-/* Logo moved to 1st column, 2nd row */
+.footer-desc {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+
 .footer-logo {
   grid-column: 1;
   grid-row: 3;
@@ -40,7 +42,7 @@
   text-align: left;
 }
 
-/* Socials centered in middle, row 1 */
+
 .footer-socials {
   grid-column: 2;
   grid-row: 1;
@@ -63,15 +65,14 @@
   outline: none;
 }
 
-/* Right column (empty or optional), row 1 */
 .site-footer > *:nth-child(3) {
   grid-column: 3;
   grid-row: 1;
 }
 
-/* Footer text spanning all columns, row 3 */
+
 .footer-link-wrap {
-  grid-column: 1 / -1; /* span all columns */
+  grid-column: 1 / -1; 
   grid-row: 3;
   margin-top: 2rem;
   max-width: 500px;
@@ -100,11 +101,66 @@
   color: rgb(168, 8, 8);
 }
 
-/* Profile pic */
+
 .profile-pic {
   border-radius: 50%;
   display: inline-block;
   width: 30px;
   height: 30px;
   object-fit: cover;
+}
+
+
+@media (max-width: 769px) {
+  .site-footer {
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+  }
+
+  .footer-logo {
+    padding: 0;
+    font-size: 8px;
+    margin-left: 0; 
+    text-align: center; 
+    width: 100%; 
+  }
+
+  .logo-img {
+    width: 120px; 
+    height: 60px;
+    margin: 0 auto; 
+  }
+
+  .footer-socials {
+    grid-column: 1 / -1; 
+    grid-row: 1;
+    justify-self: unset; 
+    display: flex;
+    justify-content: center; 
+    gap: 1.2rem;
+  }
+
+  .footer-socials a {
+    font-size: 30px; 
+  }
+
+  .footer-link-wrap {
+    grid-column: 1 / -1; 
+    grid-row: 3;
+    margin-top: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .footer-copy,
+  .footer-credit {
+    margin: 0.3rem 0;
+    font-size: 14px;
+  }
 }

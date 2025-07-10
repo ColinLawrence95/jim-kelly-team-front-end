@@ -17,6 +17,12 @@ interface Listing {
     ListingContractDate?: string;
 }
 
+const pageVariants = {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 50 },
+};
+
 function ListingsPage() {
     const [sortType, setSortType] = useState<SortType>("price-asc");
     const [listings, setListings] = useState<Listing[]>([]);
@@ -25,9 +31,7 @@ function ListingsPage() {
     useEffect(() => {
         async function fetchListings() {
             try {
-                const response = await axios.get<Listing[]>(
-                    "http://localhost:3000/api/listings"
-                );
+                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
                 setListings(response.data || []);
             } catch (error) {
                 console.error("Error fetching listings:", error);
@@ -41,41 +45,47 @@ function ListingsPage() {
 
     return (
         <motion.div
-            className="listings-page-container"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.5 }}
         >
-            <div className="listings-page-top-container">
-                <h1 id="listings-page-title">FEATURED LISTINGS</h1>
+            <motion.div
+                className="listings-page-container"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+            >
+                <div className="listings-page-top-container">
+                    <h1 id="listings-page-title">FEATURED LISTINGS</h1>
 
-                <div className="listings-page-sort">
-                    <select
-                        id="sort"
-                        value={sortType}
-                        onChange={(e) =>
-                            setSortType(e.target.value as SortType)
-                        }
-                    >
-                        <option value="price-asc">Price: Low to High</option>
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="date-newest">Date: Newest</option>
-                        <option value="date-oldest">Date: Oldest</option>
-                    </select>
+                    <div className="listings-page-sort">
+                        <select
+                            id="sort"
+                            value={sortType}
+                            onChange={(e) => setSortType(e.target.value as SortType)}
+                        >
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="date-newest">Date: Newest</option>
+                            <option value="date-oldest">Date: Oldest</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            {loading ? (
-                <p id="listings-page-loading">Loading listings...</p>
-            ) : (
-                <motion.div
-                    initial={{ opacity: 0,  }}
-                    animate={{ opacity: 1, }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                >
-                    <CurrentListings sortType={sortType} listings={listings} />
-                </motion.div>
-            )}
+                {loading ? (
+                    <p id="listings-page-loading">Loading listings...</p>
+                ) : (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1.5 }}
+                    >
+                        <CurrentListings sortType={sortType} listings={listings} />
+                    </motion.div>
+                )}
+            </motion.div>
         </motion.div>
     );
 }

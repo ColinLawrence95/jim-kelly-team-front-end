@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "./ContactForm.css";
+import { motion } from "framer-motion";
 
 const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE;
 const TEMPLATE_ID_AUTO_REPLY = import.meta.env.VITE_EMAIL_TEMPLATE_AUTO_REPLY;
 const TEMPLATE_ID_NOTIFICATION = import.meta.env.VITE_EMAIL_TEMPLATE_NOTIFICATION;
 const PUBLIC_KEY = import.meta.env.VITE_EMAIL_API;
 
-console.log("import.meta.env:", import.meta.env);
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -77,13 +77,8 @@ const ContactForm: React.FC = () => {
         <div className="contact-form-container">
             <form onSubmit={handleSubmit} className="contact-form">
                 <h1 id="contact-form-title">CONTACT US</h1>
-                
-                <input
-                    name="name"
-                    onChange={handleChange}
-                    placeholder="Full Name"
-                    required
-                />
+
+                <input name="name" onChange={handleChange} placeholder="Full Name" required />
                 <input
                     name="phone"
                     type="tel"
@@ -131,12 +126,23 @@ const ContactForm: React.FC = () => {
                     <option value="Undecided">Undecided</option>
                 </select>
 
-                <button type="submit" disabled={isSending}>
+                <motion.button
+                    type="submit"
+                    disabled={isSending}
+                    whileHover={{
+                        scale: 1.08,
+                        transition: {
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                        },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                >
                     {isSending ? "SENDING..." : "SEND"}
-                </button>
+                </motion.button>
                 {status && <p>{status}</p>}
             </form>
-         
         </div>
     );
 };

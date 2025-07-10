@@ -5,7 +5,7 @@
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 50px;
-    padding-bottom: 40px;
+
     margin-top: 80px;
     font-family: "Inter";
 }
@@ -26,13 +26,12 @@
     height: 370px;
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
 .featured-address {
     font-size: 22px;
     margin-top: 10px;
     text-transform: uppercase;
-    color: rgb(5, 19, 78);;
+    color: rgb(5, 19, 78);
 }
 #city {
     position: relative;
@@ -59,15 +58,50 @@
     color: rgb(5, 19, 78);
 }
 #featured-more-listings {
-    width: 150px;
-    height: 50px;
- margin-top: 30px;
-    font-size: 16px;
+    margin-top: 30px;
+    font-size: 18px;
     font-family: "Montserrat";
     font-weight: bold;
     background-color: transparent;
     border: none;
+    padding: 0;
 }
 #featured-more-listings:hover {
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+ .featured-listings-container{
+    margin: 20px 0 0 0;
+ }
+
+    .featured-listings-grid {
+        display: flex;
+        flex-direction: column; /* Change to column layout */
+        align-items: center; /* Center the items vertically */
+     
+    }
+
+    .featured-listing-card {
+        margin-bottom: 20px; /* Add spacing between items */
+    }
+
+    .featured-image {
+    min-width: 95vw;
+        max-width: 95vw;
+        min-height: 40vh;
+        max-height: 40vh;
+        
+    }
+    .featured-address, .featured-price{
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    #city{
+        font-size: 15px;
+    }
+    #featured-more-listings{
+        margin-left: 5px;
+        padding-bottom: 20px;
+    }
 }

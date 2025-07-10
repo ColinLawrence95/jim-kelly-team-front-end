@@ -1,17 +1,20 @@
 import { FaInstagram } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
+import { motion } from "framer-motion";
 import "./Footer.css";
 
 function Footer() {
     return (
-        <footer className="site-footer">
+        <motion.footer
+            className="site-footer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+        >
             <div className="footer-logo">
                 <div className="logo-img" />
                 <h1>RE/MAX Hallmark First Group Realty Ltd.</h1>
-                <h2>
-                  314 Harwood Ave S Unit 200, Ajax, ON L1S
-                    2J1 
-                </h2>
+                <h2>314 Harwood Ave S Unit 200, Ajax, ON L1S 2J1</h2>
                 <h3>905-683-5000</h3>
             </div>
 
@@ -54,7 +57,7 @@ function Footer() {
                     </a>
                 </p>
             </div>
-        </footer>
+        </motion.footer>
     );
 }
 

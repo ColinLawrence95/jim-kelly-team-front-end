@@ -20,9 +20,7 @@ function Testimonials() {
         const getReviews = async () => {
             try {
                 const response = await axios.get(reviewApi);
-                const sorted = [...response.data].sort(
-                    (a, b) => b.time - a.time
-                );
+                const sorted = [...response.data].sort((a, b) => b.time - a.time);
                 setReviews(sorted.slice(0, 5)); // limit to 5 reviews
             } catch (error) {
                 console.error("Error fetching reviews:", error);
@@ -37,15 +35,14 @@ function Testimonials() {
     };
 
     const handlePrev = () => {
-        setActiveIndex((prevIndex) =>
-            prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
-        );
+        setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
     };
 
     return (
         <>
-            <div className="testimonials-container"
-            style={{ backgroundImage: `url(/testimonials-image.png)` }}
+            <div
+                className="testimonials-container"
+                style={{ backgroundImage: `url(/testimonials-image.png)` }}
             >
                 {reviews.length > 0 ? (
                     <div className="testimonial-slider-wrapper">
@@ -63,24 +60,16 @@ function Testimonials() {
                                     onClick={handlePrev}
                                     aria-label="Previous review"
                                 >
-                                    <IoMdArrowRoundBack/>
+                                    <IoMdArrowRoundBack />
                                 </button>
 
                                 <div className="testimonial-content">
                                     <div className="review-text">
-                                        <p id="testimonials-text">
-                                            {reviews[activeIndex].text}
-                                        </p>
+                                        <p id="testimonials-text">{reviews[activeIndex].text}</p>
                                     </div>
                                     <div className="review-author">
-                                        <p>
-                                            {"⭐".repeat(
-                                                reviews[activeIndex].rating
-                                            )}
-                                        </p>
-                                        <strong>
-                                            {reviews[activeIndex].author_name}
-                                        </strong>
+                                        <p>{"⭐".repeat(reviews[activeIndex].rating)}</p>
+                                        <strong>{reviews[activeIndex].author_name}</strong>
                                         <div className="timestamp">
                                             {new Date(
                                                 reviews[activeIndex].time * 1000
@@ -94,7 +83,7 @@ function Testimonials() {
                                     onClick={handleNext}
                                     aria-label="Next review"
                                 >
-                                    <IoMdArrowRoundForward/>
+                                    <IoMdArrowRoundForward />
                                 </button>
                             </motion.div>
                         </AnimatePresence>
