@@ -100,7 +100,7 @@ function CurrentListings({ sortType, listings }: Props) {
 
                             {daysAgo !== null && (
                                 <p className="current-listings-days">
-                                    Listed {daysAgo} day{daysAgo === 1 ? "" : "s"} ago
+                                  
                                 </p>
                             )}
                         </motion.div>
