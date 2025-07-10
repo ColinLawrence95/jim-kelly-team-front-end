@@ -12,6 +12,7 @@ interface Listing {
     ListingKey: string;
     ListingContractDate?: string;
 }
+const LISTING_API = import.meta.env.VITE_LISTINGS_URL
 
 const isActive = ["New", "Extension", "Price Change"];
 interface Props {
@@ -25,7 +26,7 @@ function CurrentListings({ sortType }: Props) {
     useEffect(() => {
         async function fetchListings() {
             try {
-                const response = await axios.get<Listing[]>("http://localhost:3000/api/listings");
+                const response = await axios.get<Listing[]>(LISTING_API);
                 setListings(response.data || []);
             } catch (error) {
                 console.error("Failed to fetch listings", error);
