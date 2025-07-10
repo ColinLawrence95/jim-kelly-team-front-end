@@ -37,10 +37,6 @@
     cursor: pointer;
 }
 
-.nav-link:hover {
-    background-color: #f0f0f0;
-}
-
 /* Hamburger menu icon (hidden on desktop) */
 .hamburger-menu {
     display: none;
