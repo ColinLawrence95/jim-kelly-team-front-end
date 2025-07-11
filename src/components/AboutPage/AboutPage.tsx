@@ -62,7 +62,7 @@ function AboutPage() {
                         </div>
 
                         <div className="about-desc">
-                            <p>
+                            <p id="connor-desc">
                                 With more than 35 years of real estate experience and a background
                                 as a professional engineer, Jim Kelly brings unmatched knowledge,
                                 precision, and strategy to every transaction. As the founder and

@@ -25,6 +25,7 @@
     align-items: center;
     text-align: left;
     padding-bottom: 50px;
+     line-height: 1.5;
 }
 
 .about-team-image-and-desc::after {
@@ -96,6 +97,8 @@
     margin-top: 55px;
     font-size: 25px;
     font-family: "Alice";
+       line-height: 1.5;
+   
 }
 
 @media (max-width: 769px) {
@@ -123,13 +126,15 @@
     }
     .about-desc{
         font-size: 12px;
-        width: 95vw;
+        width: 90vw;
         margin: 20px 0 0 0;
     }
     .about-element-container{
         flex-direction: column;
+        margin: 0;
     }
     .about-container{
         margin-top: 20px;
     }
+  
 }
