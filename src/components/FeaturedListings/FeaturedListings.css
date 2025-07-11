@@ -12,6 +12,7 @@
 .featured-listings-grid {
     display: flex;
     justify-content: space-between;
+    margin: 0 50px 0 50px;
 }
 .featured-listing-card {
     text-align: left;
@@ -59,6 +60,7 @@
 }
 #featured-more-listings {
     margin-top: 30px;
+    margin-left: 50px;
     font-size: 18px;
     font-family: "Montserrat";
     font-weight: bold;
@@ -69,15 +71,29 @@
 #featured-more-listings:hover {
     cursor: pointer;
 }
-@media (max-width: 1550px) {
+@media (max-width: 1620px) {
     .featured-image {
-        width: 340px;
+        width: 450px;
+        height: 350px;
+    }
+
+}
+@media (max-width: 1500px) {
+     .featured-image {
+        width: 400px;
+        height: 300px;
+    }
+
+}
+@media (max-width: 1350px) {
+     .featured-image {
+        width: 350px;
         height: 275px;
     }
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
  .featured-listings-container{
     margin: 20px 0 0 0;
  }
