@@ -2,10 +2,10 @@
 .featured-listings-container {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
-    margin-right: 100px;
+   
+   
     margin-bottom: 50px;
-
+    width: 100%;
     margin-top: 80px;
     font-family: "Inter";
 }
@@ -68,6 +68,13 @@
 }
 #featured-more-listings:hover {
     cursor: pointer;
+}
+@media (max-width: 1550px) {
+    .featured-image {
+        width: 340px;
+        height: 275px;
+    }
+
 }
 
 @media (max-width: 1024px) {
