@@ -1,0 +1,58 @@
+.accordion-container {
+    border: 1px solid #e5e7eb; /* light border */
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.accordion-header {
+    background-color: #f9fafb; /* soft neutral */
+    color: #1f1f1f;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Barlow", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f1f5f9;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    font-size: 1.25rem;
+    color: #0054A4; /* RE/MAX blue as accent */
+}
+
+.accordion-icon.open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.accordion-inner {
+    padding: 1rem 1.5rem;
+    color: #333;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.buyersguide-list-item strong {
+    color: #E11B22; /* RE/MAX red accent for labels */
+    font-weight: 600;
+}
