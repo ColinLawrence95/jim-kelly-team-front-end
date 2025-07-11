@@ -32,7 +32,7 @@ function LandingPage() {
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true, amount: 0.2 }}
             >
                 <OurStory />
@@ -41,7 +41,7 @@ function LandingPage() {
             <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true, amount: 0.2 }}
             >
                 <Testimonials />
@@ -50,7 +50,7 @@ function LandingPage() {
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.3}}
                 viewport={{ once: true, amount: 0.2 }}
             >
                 <FeaturedListings />

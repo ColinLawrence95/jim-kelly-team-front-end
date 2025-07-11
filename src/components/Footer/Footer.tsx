@@ -37,7 +37,9 @@ function Footer() {
                         <FaInstagram />
                     </a>
                 </div>
+                <h3 className="footer-email"> contact@thejimkellyteam.com</h3>
                 <p className="footer-copy">© {new Date().getFullYear()} The Jim Kelly Team.</p>
+
                 <p className="footer-credit">
                     Built by{" "}
                     <a
