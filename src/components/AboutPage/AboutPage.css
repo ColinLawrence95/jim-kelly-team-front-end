@@ -6,6 +6,11 @@
   width: 100%;
   color: rgb(20, 20, 20);
 }
+
+.about-page-container .banner-header-back {
+  background-position: center 35%;
+}
+
 #about-meet-the-team {
   margin-top: 50px;
   font-size: 40px;
@@ -70,13 +75,12 @@
   width: 100%;
   margin: 0;
   padding: 0 0 18px 0;
-font-size: 20px;
+  font-size: 20px;
   font-family: "Alice";
   text-align: center;
   line-height: 1.85;
   color: rgb(56, 56, 56);
   max-width: 72ch;
-
 }
 
 .about-container {
@@ -156,14 +160,10 @@ font-size: 20px;
   #about-team-desc {
     width: 94%;
     font-size: 15px;
-   
+
     padding: 0;
     padding-bottom: 14px;
     max-width: none;
-  }
-
-  .about-team-image-and-desc {
-  
   }
 
   .about-team-header {
@@ -203,7 +203,6 @@ font-size: 20px;
 
   .about-container {
     width: 94%;
- 
   }
 
   .about-image-name-container {
