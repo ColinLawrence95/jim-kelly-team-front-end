@@ -1,46 +1,43 @@
 .current-listings-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-top: 50px;
-    font-family: "Inter";
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: start;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 10px;
+  font-family: "Inter";
+  min-height: 100svh;
 }
 .current-listings-element-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .current-listings-element {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
- 
-    margin-bottom: 50px;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
 
-   
+  margin-bottom: 50px;
 }
 .current-listings-image {
-    height: 400px;
-    width: 550px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1024px) {
-    .current-listings-image{
-        min-width: 95vw;
-        max-width: 95vw;
-        min-height: 40vh;
-        max-height: 40vh;
-        
-    }
-    .current-listings-container{
-        flex-direction: column;
-    }
-
+  .current-listings-image {
+    min-width: 95vw;
+    max-width: 95vw;
+    min-height: 40vh;
+    max-height: 40vh;
+  }
+  .current-listings-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

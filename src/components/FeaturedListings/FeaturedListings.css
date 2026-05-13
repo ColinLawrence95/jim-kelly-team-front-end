@@ -1,130 +1,181 @@
 @import url("https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 .featured-listings-container {
-    display: flex;
-    flex-direction: column;
-   
-   
-    margin-bottom: 50px;
-    width: 100%;
-    margin-top: 80px;
-    font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100svh;
+  width: 100%;
+
+  font-family: "Inter";
 }
 .featured-listings-grid {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 50px 0 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+}
+.featured-listings-title {
+  font-size: 42px;
+  margin: 0 0 18px 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(5, 19, 78);
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.featured-listings-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 19, 78, 0.3),
+    rgba(5, 19, 78, 0.8),
+    rgba(5, 19, 78, 0.3)
+  );
+  border-radius: 999px;
+}
+.featured-listing-link {
+  display: block;
+  width: 100%;
 }
 .featured-listing-card {
-    text-align: left;
-    font-size: 24px;
-    color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  text-align: left;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.featured-listing-card:hover {
+  transform: translateY(-4px);
 }
 .featured-image {
-    width: 500px;
-    height: 370px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  width: 100%;
 }
 .featured-address {
-    font-size: 22px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    color: rgb(5, 19, 78);
+  font-size: 22px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  color: rgb(5, 19, 78);
 }
 #city {
-    position: relative;
-    font-size: 18px;
-    padding-bottom: 10px; /* space for the border */
-    text-align: left;
-    color: rgb(104, 103, 103);
+  position: relative;
+  font-size: 18px;
+  padding-bottom: 10px; /* space for the border */
+  text-align: left;
+  color: rgb(104, 103, 103);
 }
 
 #city::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0; /* align to the left */
-    width: 60px; /* set the desired shorter length */
-    height: 2px;
-    background-color: rgb(5, 19, 78);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0; /* align to the left */
+  width: 60px; /* set the desired shorter length */
+  height: 2px;
+  background-color: rgb(5, 19, 78);
 }
 
 .featured-price {
-    font-size: 25px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: rgb(5, 19, 78);
+  font-size: 25px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: rgb(5, 19, 78);
 }
 #featured-more-listings {
-    margin-top: 30px;
-    margin-left: 50px;
-    font-size: 18px;
-    font-family: "Montserrat";
-    font-weight: bold;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+  position: relative;
+  font-size: 25px;
+  padding: 14px 24px;
+  color: rgb(5, 19, 78);
+  background-color: transparent;
+  border: 1px solid rgba(5, 19, 78, 0.18);
+  font-weight: bold;
+  font-family: "Montserrat";
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.22s ease;
 }
 #featured-more-listings:hover {
-    cursor: pointer;
+  cursor: pointer;
+  background-color: #f2f2f2;
 }
 @media (max-width: 1620px) {
-    .featured-image {
-        width: 450px;
-        height: 350px;
-    }
-
+  .featured-image {
+    width: 100%;
+    height: 350px;
+  }
 }
 @media (max-width: 1500px) {
-     .featured-image {
-        width: 400px;
-        height: 300px;
-    }
-
+  .featured-image {
+    width: 100%;
+    height: 300px;
+  }
 }
 @media (max-width: 1350px) {
-     .featured-image {
-        width: 350px;
-        height: 275px;
-    }
-
+  .featured-image {
+    width: 100%;
+    height: 275px;
+  }
 }
 
 @media (max-width: 1150px) {
- .featured-listings-container{
-    margin: 20px 0 0 0;
- }
+  .featured-listings-container {
+    margin: 5px 0 0 0;
+    min-height: auto;
+  }
 
-    .featured-listings-grid {
-        display: flex;
-        flex-direction: column; /* Change to column layout */
-        align-items: center; /* Center the items vertically */
-     
-    }
+  .featured-listings-grid {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    gap: 20px;
+  }
 
-    .featured-listing-card {
-        margin-bottom: 20px; /* Add spacing between items */
-    }
+  .featured-listing-link,
+  .featured-listing-card {
+    display: block;
+    width: 100%;
+  }
 
-    .featured-image {
-    min-width: 95vw;
-        max-width: 95vw;
-        min-height: 40vh;
-        max-height: 40vh;
-        
-    }
-    .featured-address, .featured-price{
-        margin-left: 10px;
-        font-size: 20px;
-    }
-    #city{
-        font-size: 15px;
-    }
-    #featured-more-listings{
-        margin-left: 5px;
-        padding-bottom: 20px;
-    }
+  .featured-listing-card {
+    margin-bottom: 20px; /* Add spacing between items */
+  }
+
+  .featured-image {
+    width: 100%;
+    min-height: 40vh;
+    max-height: 40vh;
+  }
+  .featured-address,
+  .featured-price {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  #city {
+    font-size: 15px;
+  }
+  #featured-more-listings {
+    margin: 20px;
+  }
+  .featured-listings-title {
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 }

@@ -14,27 +14,27 @@ import { ToastContainer } from "react-toastify";
 import "./App.css";
 
 function App() {
-    const location = useLocation();
+  const location = useLocation();
 
-    return (
-        <div className="app-container">
-            <NavBar />
-            <main className="app-content">
-                <AnimatePresence mode="wait">
-                    <Routes location={location} key={location.pathname}>
-                        <Route path="/" element={<LandingPage />} />
-                        <Route path="/about" element={<AboutPage />} />
-                        <Route path="/listings" element={<ListingsPage />} />
-                        <Route path="/Buyers" element={<BuyersGuide />} />
-                        <Route path="/Sellers" element={<SellersGuide />} />
-                        <Route path="/contact" element={<ContactPage />} />
-                    </Routes>
-                </AnimatePresence>
-            </main>
-            <Footer />
-            <ToastContainer />
-        </div>
-    );
+  return (
+    <div className="app-container">
+      <NavBar />
+      <main className="app-content">
+        <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/listings" element={<ListingsPage />} />
+            <Route path="/Buyers" element={<BuyersGuide />} />
+            <Route path="/Sellers" element={<SellersGuide />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+      <Footer />
+      <ToastContainer />
+    </div>
+  );
 }
 
 export default App;

@@ -1,35 +1,38 @@
 .site-footer {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto auto auto; 
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  gap: 2rem;
+  min-height: 150px;
+  padding: 24px 28px;
   background-color: #ffffff;
   color: #000000;
-  font-size: 0.9rem;
+  border-top: 2px solid #d9d9d9;
   text-align: center;
-  position: relative;
-  row-gap: 0rem;
-  border-top: 1px solid grey;
-  margin-top: 70px;
 }
 
-.footer-desc {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-
-.footer-logo {
-  grid-column: 1;
-  grid-row: 3;
-  justify-self: start;
+.footer-column {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  gap: 0.4rem;
+}
+
+.footer-left {
+  align-items: flex-start;
   text-align: left;
-  width: 550px;
-  font-size: 10px;
+  width: 33.333%;
+}
+
+.footer-center {
+  align-items: center;
+  text-align: center;
+  width: 33.333%;
+}
+
+.footer-right {
+  align-items: flex-end;
+  text-align: right;
+  width: 33.333%;
 }
 
 .logo-img {
@@ -39,23 +42,31 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  text-align: left;
 }
 
+.footer-left h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.footer-left h2,
+.footer-left h3,
+.footer-email,
+.footer-copy {
+  margin: 0;
+  color: rgb(46, 46, 46);
+}
+
+.footer-email {
+  font-weight: 800;
+}
 
 .footer-socials {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: center;
-  display: grid;
-  grid-auto-flow: column;
-  gap: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
   align-items: center;
-}
-.footer-email{
-  margin-bottom: 10px;
-  font-weight: 800;
-  color: rgb(46, 46, 46);
 }
 
 .footer-socials a {
@@ -70,102 +81,74 @@
   outline: none;
 }
 
-.site-footer > *:nth-child(3) {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-
-.footer-link-wrap {
-  grid-column: 1 / -1; 
-  grid-row: 3;
-  margin-top: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.footer-copy,
-.footer-credit {
-  margin: 0.3rem 0;
-  font-size: 15px;
-}
-
-/* Designer link */
-.designer-link {
+.footer-signature-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  color: #000000;
+  justify-content: flex-end;
+  width: 160px;
+  height: 64px;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.designer-link:hover {
-  color: rgb(168, 8, 8);
+.footer-signature-logo {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-
-.profile-pic {
-  border-radius: 50%;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-
-@media (max-width: 769px) {
+@media (max-width: 900px) {
   .site-footer {
-    margin-top: 10px;
-    padding: 0;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 22px 18px;
+    gap: 1.4rem;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%;
+    align-items: center;
     text-align: center;
   }
 
-  .footer-logo {
-    padding: 0;
-    font-size: 8px;
-    margin-left: 0; 
-    text-align: center; 
-    width: 100%; 
+  .footer-left h1 {
+    font-size: 0.95rem;
   }
 
   .logo-img {
-    width: 120px; 
-    height: 60px;
-    margin: 0 auto; 
-  }
-
-  .footer-socials {
-    grid-column: 1 / -1; 
-    grid-row: 1;
-    justify-self: unset; 
-    display: flex;
-    justify-content: center; 
-    gap: 1.2rem;
+    width: 180px;
+    height: 72px;
+    margin: 0 auto;
   }
 
   .footer-socials a {
-    font-size: 30px; 
+    font-size: 32px;
   }
 
-  .footer-link-wrap {
-    grid-column: 1 / -1; 
-    grid-row: 3;
-    margin-top: 1rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  .footer-signature-link {
+    justify-content: center;
+    width: 150px;
+    height: 150px;
   }
 
-  .footer-copy,
-  .footer-credit {
-    margin: 0.3rem 0;
-    font-size: 14px;
+  .footer-signature-logo {
+    width: 120px;
+    height: 150px;
   }
 }

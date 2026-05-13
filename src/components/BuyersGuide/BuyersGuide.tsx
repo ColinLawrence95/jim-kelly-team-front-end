@@ -25,7 +25,7 @@ export default function BuyersGuide() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
             >
-                <GuideBanner />
+                <GuideBanner photoUrl="banner.jpg"/>
                 <article id="buyersguide-article">
                     <h1 className="buyersguide-title">The Ultimate Home Buyer’s Guide</h1>
                     <p className="buyersguide-paragraph">

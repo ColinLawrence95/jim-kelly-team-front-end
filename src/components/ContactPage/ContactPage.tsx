@@ -1,4 +1,5 @@
 import ContactForm from "../ContactForm/ContactForm";
+import GuideBanner from "../GuideBanner/GuideBanner";
 import "./ContactPage.css";
 import { motion } from "framer-motion";
 
@@ -23,10 +24,7 @@ function ContactPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
             >
-                <div
-                    className="contact-page-team-image"
-                    style={{ backgroundImage: `url(/contact-team-image.JPG)` }}
-                ></div>
+                    <GuideBanner photoUrl="/contact-team-image.png" />
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}

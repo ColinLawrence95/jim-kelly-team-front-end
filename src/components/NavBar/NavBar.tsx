@@ -29,15 +29,13 @@ function NavBar() {
 
   return (
     <div className="nav-bar-container">
-      <motion.div
-        className="nav-bar-contents"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
+      <motion.div className="nav-bar-contents" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         {/* Logo */}
         <div
           className="nav-bar-logo"
           style={{ backgroundImage: `url(/REMAX_logo.png)` }}
+          onClick={() => handleNavClick("/")}
+          aria-label="Go to home page"
         />
 
         {/* Hamburger Icon */}
@@ -46,7 +44,7 @@ function NavBar() {
           onClick={toggleMenu}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ y: -2 }}
           style={{ zIndex: 100 }}
         >
           {isOpen ? <FaTimes size={40} color="#000" /> : <FaBars size={40} color="#000" />}
@@ -58,10 +56,7 @@ function NavBar() {
             <motion.p
               key={item.label}
               onClick={() => handleNavClick(item.path)}
-              whileHover={{
-                scale: 1.1,
-                transition: { type: "spring", stiffness: 300, damping: 15 },
-              }}
+              whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="nav-link"
             >
@@ -85,10 +80,7 @@ function NavBar() {
                 <motion.p
                   key={item.label}
                   onClick={() => handleNavClick(item.path)}
-                  whileHover={{
-                    scale: 1.1,
-                    transition: { type: "spring", stiffness: 300, damping: 15 },
-                  }}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="nav-link"
                 >

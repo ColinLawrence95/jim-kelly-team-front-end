@@ -2,97 +2,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .hero-page-container {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100svh - 135px);
 }
 .hero-container {
-    display: flex;
+  display: flex;
+  height: 100%;
+  width: 100%;
 
-    justify-content: space-between;
+  justify-content: space-between;
+  background-color: rgba(34, 34, 34, 0.74);
 
-    background-color: rgba(34, 34, 34, 0.74);
-
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
 }
 .hero-title-and-button {
-    justify-content: center;
-    font-size: 45px;
-    font-family: "GFS Didot";
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  font-size: 45px;
+  font-family: "GFS Didot";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 .hero-title-and-button button {
-    font-size: 30px;
-    border-radius: 12px;
+  font-size: 30px;
+  border-radius: 12px;
 }
 .hero-title-container {
-    align-items: top;
+  align-items: top;
 
-    margin-left: 20px;
-    margin-top: 50px;
-    border-radius: 50px;
-    width: 720px;
-    height: 700px;
+  margin-left: 20px;
+  margin-top: 50px;
+  border-radius: 50px;
 }
 #hero-title::after {
-    content: "";
-    display: block;
-    width: 350px;
-    border-bottom: 3px solid #ffffff;
-    margin: 20px auto 0 auto;
+  content: "";
+  display: block;
+  width: 350px;
+  border-bottom: 3px solid #ffffff;
+  margin: 20px auto 0 auto;
 }
 #hero-tagline {
-    font-size: 40px;
+  font-size: 40px;
 
-    margin-top: 30px;
+  margin-top: 30px;
 }
 .hero-team-image {
-    margin-top: 50px;
-    height: 700px;
-    width: 720px;
-    margin-right: 20px;
+  margin-top: 0;
+  height: 100%;
+  width: 720px;
+  margin-right: 20px;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1050px) {
-    .hero-container {
-        flex-direction: column;
-        max-height: 500px;
-        justify-content: center;
-        align-items: center;
-    }
-    .hero-page-container{
-        min-width: 100%;
-        max-height: 500px;
-    }
-    .hero-title-container{
-        max-width: 100%;
-        margin: 0;
-    }
-    .hero-team-image{
-        min-height: 370px;
-        max-width: 380px;
-        margin: 0;
-    }
-    .hero-title-and-button {
-        font-size: 26px;
-        max-width: 100%;
-        margin-top: 20px;
-    }
-    #hero-tagline {
-        font-size: 20px;
-        margin-top: 10px;
-    }
-    #hero-title::after {
-        width: 100px;
-          margin: 10px auto 0 auto;
-    }
-    
+  .hero-container {
+    flex-direction: column;
+    height: 100%;
+    max-height: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-page-container {
+    min-width: 100%;
+    height: calc(100svh - 88px);
+  }
+  .hero-title-container {
+    max-width: 100%;
+    margin: 0;
+  }
+  .hero-team-image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .hero-title-and-button {
+    font-size: 25px;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  #hero-tagline {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  #hero-title::after {
+    width: 100px;
+    margin: 10px auto 0 auto;
+  }
 }

@@ -4,63 +4,81 @@ import { motion } from "framer-motion";
 import "./Footer.css";
 
 function Footer() {
-    return (
-        <motion.footer
-            className="site-footer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+  return (
+    <motion.footer
+      className="site-footer"
+      initial="hidden"
+      animate="show"
+      variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.2, delayChildren: 1.5 } },
+      }}
+    >
+      <motion.div
+        className="footer-column footer-left"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+        }}
+      >
+        <div className="logo-img" />
+        <h1>RE/MAX Hallmark First Group Realty Ltd.</h1>
+        <h2>314 Harwood Ave S Unit 200, Ajax, ON L1S 2J1</h2>
+        <h3>905-683-5000</h3>
+      </motion.div>
+
+      <motion.div
+        className="footer-column footer-center"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+        }}
+      >
+        <div className="footer-socials">
+          <a
+            href="https://www.facebook.com/opreyrealestate"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FaSquareFacebook />
+          </a>
+          <a
+            href="https://www.instagram.com/thejimkellyteam"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
+        </div>
+        <h3 className="footer-email">contact@thejimkellyteam.com</h3>
+        <p className="footer-copy">© {new Date().getFullYear()} The Jim Kelly Team.</p>
+      </motion.div>
+
+      <motion.div
+        className="footer-column footer-right"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+        }}
+      >
+        <a
+          href="https://codebycolin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-signature-link"
+          aria-label="Built by CodeByColin"
         >
-            <div className="footer-logo">
-                <div className="logo-img" />
-                <h1>RE/MAX Hallmark First Group Realty Ltd.</h1>
-                <h2>314 Harwood Ave S Unit 200, Ajax, ON L1S 2J1</h2>
-                <h3>905-683-5000</h3>
-            </div>
-
-            <div className="footer-link-wrap">
-                <div className="footer-socials">
-                    <a
-                        href="https://www.facebook.com/opreyrealestate"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                    >
-                        <FaSquareFacebook />
-                    </a>
-                    <a
-                        href="https://www.instagram.com/thejimkellyteam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <FaInstagram />
-                    </a>
-                </div>
-                <h3 className="footer-email"> contact@thejimkellyteam.com</h3>
-                <p className="footer-copy">© {new Date().getFullYear()} The Jim Kelly Team.</p>
-
-                <p className="footer-credit">
-                    Built by{" "}
-                    <a
-                        href="https://codebycolin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="designer-link"
-                    >
-                        <strong>CodeByColin</strong>
-                        <img
-                            src="/Profile.png"
-                            alt="Profile of Colin Lawrence"
-                            className="profile-pic"
-                            width={30}
-                            height={30}
-                        />
-                    </a>
-                </p>
-            </div>
-        </motion.footer>
-    );
+          <span
+            className="footer-signature-logo"
+            style={{ backgroundImage: "url(/lnr.png)" }}
+            aria-hidden="true"
+          />
+        </a>
+      </motion.div>
+    </motion.footer>
+  );
 }
 
 export default Footer;

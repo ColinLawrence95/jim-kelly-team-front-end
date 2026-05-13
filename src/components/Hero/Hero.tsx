@@ -4,7 +4,7 @@ function Hero() {
     return (
         <div
             className="hero-page-container"
-            style={{ backgroundImage: `url(/house2.png)` }}
+            style={{ backgroundImage: `url(/house2.jpg)` }}
         >
             <div className="hero-container">
                 <div className="hero-title-container">

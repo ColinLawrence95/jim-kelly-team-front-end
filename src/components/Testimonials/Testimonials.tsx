@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Testimonials.css";
 import { motion, AnimatePresence } from "framer-motion";
-import { IoMdArrowRoundBack, IoMdArrowRoundForward } from "react-icons/io";
+import { MdArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md";
+import { IoMdStar } from "react-icons/io";
 
 interface Review {
   author_name: string;
@@ -14,7 +15,23 @@ interface Review {
 function Testimonials() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
   const reviewApi = import.meta.env.VITE_REVIEWS_URL;
+
+  const slideVariants = {
+    enter: (slideDirection: number) => ({
+      x: slideDirection > 0 ? -80 : 80,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (slideDirection: number) => ({
+      x: slideDirection > 0 ? 80 : -80,
+      opacity: 0,
+    }),
+  };
 
   useEffect(() => {
     const getReviews = async () => {
@@ -38,10 +55,12 @@ function Testimonials() {
   }, [reviewApi]);
 
   const handleNext = () => {
+    setDirection(1);
     setActiveIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
 
   const handlePrev = () => {
+    setDirection(-1);
     setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
   };
 
@@ -51,11 +70,13 @@ function Testimonials() {
       return "Date not available";
     }
     const date = new Date(time * 1000); // Convert Unix timestamp (seconds) to milliseconds
-    return isNaN(date.getTime()) ? "Date not available" : date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    return isNaN(date.getTime())
+      ? "Date not available"
+      : date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
   };
 
   return (
@@ -65,45 +86,39 @@ function Testimonials() {
     >
       {reviews.length > 0 ? (
         <div className="testimonial-slider-wrapper">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={reviews[activeIndex].time || activeIndex} // Fallback to activeIndex if time is undefined
-              className="testimonials-element"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ type: "spring", duration: 0.4 }}
-            >
-              <button
-                className="nav-button left"
-                onClick={handlePrev}
-                aria-label="Previous review"
-              >
-                <IoMdArrowRoundBack />
-              </button>
+          <div className="testimonials-element">
+            <button className="nav-button left" onClick={handlePrev} aria-label="Previous review">
+              <MdOutlineArrowBackIos />
+            </button>
 
-              <div className="testimonial-content">
+            <AnimatePresence mode="wait" custom={direction} initial={false}>
+              <motion.div
+                key={reviews[activeIndex].time || activeIndex}
+                className="testimonial-content"
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ type: "spring", stiffness: 260, damping: 24 }}
+              >
                 <div className="review-text">
                   <p id="testimonials-text">{reviews[activeIndex].text}</p>
                 </div>
                 <div className="review-author">
-                  <p>{"⭐".repeat(reviews[activeIndex].rating)}</p>
+                  <p>{Array.from({ length: reviews[activeIndex].rating }, (_, i) => (
+                    <IoMdStar key={i} size={24} />
+                  ))}</p>
                   <strong>{reviews[activeIndex].author_name}</strong>
-                  <div className="timestamp">
-                    {formatDate(reviews[activeIndex].time)}
-                  </div>
+                  <div className="timestamp">{formatDate(reviews[activeIndex].time)}</div>
                 </div>
-              </div>
+              </motion.div>
+            </AnimatePresence>
 
-              <button
-                className="nav-button right"
-                onClick={handleNext}
-                aria-label="Next review"
-              >
-                <IoMdArrowRoundForward />
-              </button>
-            </motion.div>
-          </AnimatePresence>
+            <button className="nav-button right" onClick={handleNext} aria-label="Next review">
+              <MdArrowForwardIos />
+            </button>
+          </div>
         </div>
       ) : (
         <p>No reviews available.</p>
