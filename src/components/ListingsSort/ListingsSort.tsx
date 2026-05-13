@@ -33,6 +33,17 @@ export default function ListingsSort({
     <div className="listings-sort-container">
       <div className="listings-sort-selects">
         <select
+          value={transactionType}
+          onChange={(e) => setTransactionType(e.target.value as "all" | "sale" | "lease")}
+          className="listings-sort-select"
+          aria-label="Sort by transaction type"
+        >
+          <option value="all">All Properties</option>
+          <option value="sale">For Sale</option>
+          <option value="lease">For Lease</option>
+        </select>
+
+        <select
           value={sortOption}
           onChange={(e) =>
             setSortOption(
@@ -46,17 +57,6 @@ export default function ListingsSort({
           <option value="price-asc">Price: Low to High</option>
           <option value="date-newest">Date: Newest</option>
           <option value="date-oldest">Date: Oldest</option>
-        </select>
-
-        <select
-          value={transactionType}
-          onChange={(e) => setTransactionType(e.target.value as "all" | "sale" | "lease")}
-          className="listings-sort-select"
-          aria-label="Filter by transaction type"
-        >
-          <option value="all">All Properties</option>
-          <option value="sale">For Sale</option>
-          <option value="lease">For Lease</option>
         </select>
       </div>
 

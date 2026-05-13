@@ -13,6 +13,7 @@ interface Listing {
   ListPrice: number;
   UnparsedAddress: string;
   PublicRemarks: string;
+  TransactionType?: string;
   MlsStatus: string;
   MediaURL?: string;
   ListingKey: string;

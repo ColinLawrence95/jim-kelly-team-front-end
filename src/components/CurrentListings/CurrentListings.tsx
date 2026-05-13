@@ -5,6 +5,7 @@ interface Listing {
   ListPrice: number;
   UnparsedAddress: string;
   PublicRemarks: string;
+  TransactionType?: string;
   MlsStatus: string;
   MediaURL?: string;
   ListingKey: string;
@@ -31,6 +32,11 @@ function CurrentListings({ sortType, transactionType, priceRange, listings }: Pr
   };
 
   const getTransactionType = (listing: Listing): "sale" | "lease" => {
+    const backendType = (listing.TransactionType || "").toLowerCase();
+
+    if (backendType.includes("lease")) return "lease";
+    if (backendType.includes("sale")) return "sale";
+
     return /lease|rent/i.test(listing.PublicRemarks || "") ? "lease" : "sale";
   };
 
