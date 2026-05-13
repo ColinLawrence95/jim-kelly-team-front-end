@@ -25,6 +25,9 @@
 }
 .current-listings-image {
   width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -33,8 +36,7 @@
   .current-listings-image {
     min-width: 95vw;
     max-width: 95vw;
-    min-height: 40vh;
-    max-height: 40vh;
+    height: 40vh;
   }
   .current-listings-container {
     display: flex;

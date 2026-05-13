@@ -64,6 +64,9 @@
 }
 .featured-image {
   width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
 }
 .featured-address {
   font-size: 22px;
