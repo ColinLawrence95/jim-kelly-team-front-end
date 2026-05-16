@@ -115,6 +115,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .nav-bar-logo {
+    width: 68%;
+    height: 94px;
+    max-width: 235px;
+    max-height: 62px;
+  }
+}
+
 @media (min-width: 1040px) {
   .nav-links-mobile {
     display: none;
